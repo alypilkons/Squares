@@ -1,0 +1,87 @@
+body {
+  background-color: #312f2d;
+}
+
+#gameContainer {
+  margin: 60px auto;
+  width: 70%;
+  max-width: 500px;
+}
+
+/****
+PROMPT
+****/
+#promptContainer {
+  height: 60px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/****
+USER INPUT
+*****/
+#userInputContainer {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100px;
+}
+
+#userInputContainer .color {
+  width: 10%;
+  height: 80px;
+  border-radius: 0;
+  border: 2px solid white;
+  margin: 5px;
+}
+
+/****
+COLOR PALETTE
+****/
+#colorPaletteContainer {
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.color {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 2px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial;
+}
+
+.color1 {
+  background-color: #EB380F;
+}
+
+.color2 {
+  background-color: #E98C1C;
+}
+
+.color3 {
+  background-color: #F1D40E;
+}
+
+.color4 {
+  background-color: #00D467;
+}
+
+.color5 {
+  background-color: #0096D4;
+}
+
+.color6 {
+  background-color: #6B00D2;
+}
