@@ -69,141 +69,180 @@ const answerKey = [
 ]
 
 const gameInfo = {
-  level: 1,
-  prompt: null,
-  promptAnswer: null
+  level: 2,
+  score: 0,
+  promptInfo: {
+    prompt: null,
+    promptAnswer: null,
+    userInput: []
+  }
 };
 
-const userInput = [];
-
-resetUserInputContainer = () => {
-  jQuery('#userInputContainer').empty();
-  let inputHTML = '';
-  userInput.forEach((e) => {
-    inputHTML += `<div class="color color${e}"></div>`;
-  })
-  jQuery('#userInputContainer').append(inputHTML);
-}
-
-const addUserInput = index => {
-  userInput.push(index);
-  resetUserInputContainer();
-}
-
-const removeUserInput = () => {
-  console.log('removing...');
-  userInput.pop();
-  resetUserInputContainer();
-}
-
-
-const createPromptSequence = () => {
-  const numOfTiles = gameInfo.level + 1;
-  const tilesArr = [];
-  for (let i = 0; i < numOfTiles; i++) {
-    tilesArr.push(Math.floor(Math.random() * 6) + 1);
-  }
-  gameInfo.prompt = tilesArr;
-  addPromptSequenceToPage(tilesArr);
-  getAnswerArray();
-}
-
-const addPromptSequenceToPage = (sequence) => {
-  let sequenceHTML = '';
-  sequence.forEach((e) => {
-    sequenceHTML += `<div class="color color${e}"></div>`;
-  });
-  jQuery('#promptContainer').append(sequenceHTML);
-}
-
-const checkUserAnswer = () => {
-  // breaks when user input is blank but answer key is 'null'
-  console.log('user input');
-  console.log(userInput);
-  console.log('prompt answer');
-  console.log(gameInfo.promptAnswer);
-  let allCorrect = true;
-  if (userInput.length === gameInfo.promptAnswer.length) {
-    for (let i = 0; i < userInput.length; i++) {
-      if (userInput[0] !== gameInfo.promptAnswer[0]) {
-        allCorrect = false;
-      }
-    }
-  } else {
-    allCorrect = false;
-  }
-  console.log('all correct-' + allCorrect);
-  if (allCorrect) {
-    console.log('YOU GOT IT RIGHT!');
-  } else {
-    console.log('YOU GOT IT WRONG!');
-  }
-}
-
-const getAnswerArray = () => {
-  let i = 0;
-  let answer = [];
-  while (i < gameInfo.prompt.length - 1) {
-    answer.push(twoTileAnswer(gameInfo.prompt[i], gameInfo.prompt[i + 1]));
-    i++;
-  }
-  console.log('ANSWER ARRAY:');
-  console.log(answer);
-  gameInfo.promptAnswer = answer;
-}
-
-const twoTileAnswer = (tile1, tile2) => {
-  // tiles are same, user input should be that same color as well
-  if (tile1 === tile2) return tile1;
-  let response = null;
-  for (let i = 0; i < answerKey.length; i++) {
-    if ((answerKey[i].tiles[0] === tile1 && answerKey[i].tiles[1] === tile2) ||
-      (answerKey[i].tiles[0] === tile2 && answerKey[i].tiles[1] === tile1)) {
-        response = answerKey[i].response;
-      }
-    }
-  return response;
-}
 
 /****
  * KEY PRESSES
 *****/
 jQuery(document).ready(() => {
+
+const resetUserInputContainer = () => {
+    jQuery('#userInputContainer').empty();
+    let inputHTML = '';
+    gameInfo.promptInfo.userInput.forEach((e) => {
+      inputHTML += `<div class="color color${e}"></div>`;
+    })
+    jQuery('#userInputContainer').append(inputHTML);
+  }
+  
+  const addUserInput = index => {
+    gameInfo.promptInfo.userInput.push(index);
+    resetUserInputContainer();
+  }
+  
+  const removeUserInput = () => {
+    console.log('removing...');
+    gameInfo.promptInfo.userInput.pop();
+    resetUserInputContainer();
+  }
+
+  const createPromptSequence = () => {
+    const numOfTiles = gameInfo.level + 1;
+    const tilesArr = [];
+    for (let i = 0; i < numOfTiles; i++) {
+      tilesArr.push(Math.floor(Math.random() * 6) + 1);
+    }
+    gameInfo.promptInfo.prompt = tilesArr;
+    addPromptSequenceToPage(tilesArr);
+    getAnswerArray();
+  }
+  
+  const addPromptSequenceToPage = (sequence) => {
+    let sequenceHTML = '';
+    sequence.forEach((e) => {
+      sequenceHTML += `<div class="color color${e}"></div>`;
+    });
+    jQuery('#promptContainer').append(sequenceHTML);
+  }
+
+  const updateScore = (isCorrect) => {
+    if (isCorrect) {
+      gameInfo.score += 1;
+    }
+    jQuery('#scoreContainer span').text(gameInfo.score);
+  }
+
+  const resetPromptInfo = () => {
+    gameInfo.promptInfo.prompt = null;
+    gameInfo.promptInfo.promptAnswer = null;
+    gameInfo.promptInfo.userInput = [];
+  }
+
+  const newPrompt = () => {
+    resetPromptInfo();
+    
+    jQuery('#promptContainer').empty();
+    jQuery('#userInputContainer').empty();
+
+    createPromptSequence();
+  }
+  
+  const checkUserAnswer = () => {
+    // remove unnecessary nulls from array
+    gameInfo.promptInfo.promptAnswer = gameInfo.promptInfo.promptAnswer.filter((e) => {
+      return e !== null;
+    });
+
+    // breaks when user input is blank but answer key is 'null'
+    console.log('user input');
+    console.log(gameInfo.promptInfo.userInput);
+    console.log('prompt answer');
+    console.log(gameInfo.promptInfo.promptAnswer);
+    let allCorrect = true;
+    if (gameInfo.promptInfo.userInput.length === gameInfo.promptInfo.promptAnswer.length) {
+      for (let i = 0; i < gameInfo.promptInfo.userInput.length; i++) {
+        if (gameInfo.promptInfo.userInput[0] !== gameInfo.promptInfo.promptAnswer[0]) {
+          allCorrect = false;
+        }
+      }
+    } else {
+      allCorrect = false;
+    }
+    console.log('all correct-' + allCorrect);
+    if (allCorrect) {
+      updateScore(true);
+      jQuery('#userInputContainer').addClass('correct');
+    } else {
+      updateScore(false)
+      jQuery('#userInputContainer').addClass('incorrect');
+    }
+    setTimeout(() => {
+      jQuery('#userInputContainer').removeClass();
+      newPrompt();
+    }, 300);
+  }
+  
+  const getAnswerArray = () => {
+    let i = 0;
+    let answer = [];
+    while (i < gameInfo.promptInfo.prompt.length - 1) {
+      answer.push(twoTileAnswer(gameInfo.promptInfo.prompt[i], gameInfo.promptInfo.prompt[i + 1]));
+      i++;
+    }
+    console.log('ANSWER ARRAY:');
+    console.log(answer);
+    gameInfo.promptInfo.promptAnswer = answer;
+  }
+  
+  const twoTileAnswer = (tile1, tile2) => {
+    // tiles are same, user input should be that same color as well
+    if (tile1 === tile2) return tile1;
+    let response = null;
+    for (let i = 0; i < answerKey.length; i++) {
+      if ((answerKey[i].tiles[0] === tile1 && answerKey[i].tiles[1] === tile2) ||
+        (answerKey[i].tiles[0] === tile2 && answerKey[i].tiles[1] === tile1)) {
+          response = answerKey[i].response;
+        }
+      }
+    return response;
+  }
+
+
+
   jQuery(document).on('keypress', e => {
     const key = e.which;
     let index = null;
     console.log(key);
     switch (key) {
-      // s
-      case 115:
+      // r
+      case 114:
         index = 1;
         break;
-      // d
-      case 100:
+      // o
+      case 111:
         index = 2;
         break;
-      // f
-      case 102:
+      // y
+      case 121:
         index = 3;
         break;
-      // j
-      case 106:
+      // g
+      case 103:
         index = 4;
         break;
-      // k
-      case 107:
+      // b
+      case 98:
         index = 5;
         break;
-      // l
-      case 108:
+      // v
+      case 118:
         index = 6;
         break;
       default:
         //
     }
-    if (index && userInput.length < 8) addUserInput(index);
+    if (index && gameInfo.promptInfo.userInput.length < 8) addUserInput(index);
   });
   $('html').keyup(e => {
+    console.log(event.key);
     if (event.key === 'Backspace') {
       removeUserInput();
     }
@@ -212,6 +251,8 @@ jQuery(document).ready(() => {
     }
   });
 
+
+
+  createPromptSequence();
 });
 
-createPromptSequence();
