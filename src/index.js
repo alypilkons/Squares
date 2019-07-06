@@ -17,10 +17,10 @@ aly_gameInfo.promptInfo = {
   userInput: []
 };
 
-/****
- * KEY PRESSES
-*****/
 jQuery(document).ready(() => {
+  /****
+   * KEY PRESSES
+  *****/
   jQuery('html').keyup(event => {
     const key = event.key;
     let index = null;
@@ -62,6 +62,9 @@ jQuery(document).ready(() => {
         addUserInput(index);
       }
     }
-  });
+  }); // ** END KEY PRESS EVENT ** //
+
+  // **** START GAME **** //
   createPromptSequence();
+  // ******************** //
 });
