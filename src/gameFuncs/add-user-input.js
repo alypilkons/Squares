@@ -1,6 +1,6 @@
 /* global aly_gameInfo */
 
-import resetUserInputContainer from './reset-user-input.js.js';
+import resetUserInputContainer from './reset-user-input.js';
 
 const addUserInput = index => {
   aly_gameInfo.promptInfo.userInput.push(index);

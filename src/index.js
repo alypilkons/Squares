@@ -18,6 +18,18 @@ aly_gameInfo.promptInfo = {
 };
 
 jQuery(document).ready(() => {
+
+  jQuery(document).on('click', '.playGame', (e) => {
+    const level = jQuery(e.target).attr('id');
+    level === 'playMedium' ? aly_gameInfo.level = 3 : level === 'playHard' ? aly_gameInfo.level = 5 : aly_gameInfo.level = 1;
+
+    jQuery('#openScreen').addClass('hidden');
+
+    // **** START GAME **** //
+    createPromptSequence();
+    // ******************** //
+  });
+
   /****
    * KEY PRESSES
   *****/
@@ -63,8 +75,4 @@ jQuery(document).ready(() => {
       }
     }
   }); // ** END KEY PRESS EVENT ** //
-
-  // **** START GAME **** //
-  createPromptSequence();
-  // ******************** //
 });

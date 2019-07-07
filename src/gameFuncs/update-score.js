@@ -4,7 +4,7 @@ const updateScore = (isCorrect) => {
   if (isCorrect) {
     aly_gameInfo.score += 1;
   }
-  jQuery('#scoreContainer span').text(aly_gameInfo.score);
+  jQuery('#scoreContainer .score-number').text(aly_gameInfo.score);
 };
 
 export default updateScore;
