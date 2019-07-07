@@ -1,1 +1,1229 @@
-!function(n){var e={};function t(r){if(e[r])return e[r].exports;var o=e[r]={i:r,l:!1,exports:{}};return n[r].call(o.exports,o,o.exports,t),o.l=!0,o.exports}t.m=n,t.c=e,t.d=function(n,e,r){t.o(n,e)||Object.defineProperty(n,e,{enumerable:!0,get:r})},t.r=function(n){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(n,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(n,"__esModule",{value:!0})},t.t=function(n,e){if(1&e&&(n=t(n)),8&e)return n;if(4&e&&"object"==typeof n&&n&&n.__esModule)return n;var r=Object.create(null);if(t.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:n}),2&e&&"string"!=typeof n)for(var o in n)t.d(r,o,function(e){return n[e]}.bind(null,o));return r},t.n=function(n){var e=n&&n.__esModule?function(){return n.default}:function(){return n};return t.d(e,"a",e),e},t.o=function(n,e){return Object.prototype.hasOwnProperty.call(n,e)},t.p="",t(t.s=5)}([function(n,e,t){var r=t(1);"string"==typeof r&&(r=[[n.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};t(3)(r,o);r.locals&&(n.exports=r.locals)},function(n,e,t){(n.exports=t(2)(!1)).push([n.i,"/*****\nDEFAULT COLORS\n*******/\n/********\nPASTEL COLORS\n********/\nbody {\n  background-color: #40403E; }\n\n#gameContainer {\n  margin: 30px auto;\n  width: 70%;\n  max-width: 500px; }\n\n/****\nCOLORS\n******/\n.color1 {\n  background-color: #EB380F; }\n\n.color2 {\n  background-color: #E98C1C; }\n\n.color3 {\n  background-color: #F1D40E; }\n\n.color4 {\n  background-color: #00D467; }\n\n.color5 {\n  background-color: #0096D4; }\n\n.color6 {\n  background-color: #6B00D2; }\n\n.pastelMode .color1 {\n  background-color: #FFABAB; }\n\n.pastelMode .color2 {\n  background-color: #FFCBC1; }\n\n.pastelMode .color3 {\n  background-color: #FFF5BA; }\n\n.pastelMode .color4 {\n  background-color: #BFFCC6; }\n\n.pastelMode .color5 {\n  background-color: #85E3FF; }\n\n.pastelMode .color6 {\n  background-color: #B28DFF; }\n\n/*****\nTITLE\n*****/\n#title h1 {\n  font-family: 'Allerta Stencil', sans-serif;\n  text-align: center;\n  font-size: 60px;\n  color: silver;\n  margin-top: 20px;\n  margin-bottom: 0; }\n\n/****\nPROMPT\n****/\n#promptContainer {\n  height: 60px;\n  border: 1px solid silver;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  margin-bottom: 20px; }\n  #promptContainer .color {\n    height: 40px;\n    width: 40px;\n    margin: 5px; }\n\n/****\nUSER INPUT\n*****/\n#userInputContainer {\n  border: 1px solid silver;\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n  height: 80px; }\n  #userInputContainer .color {\n    width: 55px;\n    height: 55px;\n    margin: 5px; }\n\n#userInputContainer.correct {\n  border: 1px solid green; }\n\n#userInputContainer.incorrect {\n  border: 1px solid red; }\n\n/*****\nINFO CONTAINER\n******/\n#infoContainer {\n  height: 60px; }\n\n/****\nSCORE\n****/\n#scoreContainer span {\n  color: silver;\n  font-family: 'Allerta Stencil', sans-serif; }\n\n/****\nCOLOR PALETTE\n****/\n#colorPaletteContainer {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center; }\n\n#colorPaletteContainer .color {\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  margin: 2px;\n  color: white;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-family: Arial; }\n\n/*****\nINFO CONTAINER\n******/\n#infoContainer {\n  display: flex;\n  align-items: center;\n  justify-content: space-between; }\n\n/*** \nOPEN SCREEN \n***/\n#openScreen {\n  width: 100%;\n  height: 100%;\n  background-color: #40403E;\n  position: absolute;\n  /****\n  SPINNING SQUARES\n  ****/\n  /******\n  PLAY OPTIONS\n  ******/\n  /*****\n  MORE OPTIONS\n  ********/ }\n  #openScreen #spinningSquares {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    margin-top: 40px;\n    margin-bottom: 40px; }\n    #openScreen #spinningSquares .color {\n      width: 80px;\n      height: 80px;\n      margin: 10px;\n      border-radius: 3px;\n      cursor: pointer; }\n    #openScreen #spinningSquares .color:hover {\n      transition: all .4s ease;\n      -webkit-transition: all .9s ease;\n      transform: rotate(90deg); }\n  #openScreen #playOptions {\n    display: flex;\n    justify-content: center; }\n    #openScreen #playOptions .playGame {\n      height: 50px;\n      width: 100px;\n      color: silver;\n      border: 1px solid silver;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      font-family: 'Allerta Stencil', sans-serif;\n      margin: 10px;\n      cursor: pointer; }\n    #openScreen #playOptions .playGame:hover {\n      background-color: silver;\n      color: #40403E; }\n  #openScreen #moreOptions {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    margin-top: 20px; }\n    #openScreen #moreOptions .options {\n      font-family: 'Allerta Stencil', sans-serif;\n      color: silver;\n      margin: 20px;\n      font-size: 14px;\n      cursor: pointer; }\n    #openScreen #moreOptions .options:hover {\n      text-decoration: underline; }\n\n/****\nOPEN SCREEN CLOSED\n*****/\n#openScreen.hidden {\n  display: none; }\n",""])},function(n,e,t){"use strict";n.exports=function(n){var e=[];return e.toString=function(){return this.map(function(e){var t=function(n,e){var t=n[1]||"",r=n[3];if(!r)return t;if(e&&"function"==typeof btoa){var o=(i=r,s=btoa(unescape(encodeURIComponent(JSON.stringify(i)))),l="sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(s),"/*# ".concat(l," */")),a=r.sources.map(function(n){return"/*# sourceURL=".concat(r.sourceRoot).concat(n," */")});return[t].concat(a).concat([o]).join("\n")}var i,s,l;return[t].join("\n")}(e,n);return e[2]?"@media ".concat(e[2],"{").concat(t,"}"):t}).join("")},e.i=function(n,t){"string"==typeof n&&(n=[[null,n,""]]);for(var r={},o=0;o<this.length;o++){var a=this[o][0];null!=a&&(r[a]=!0)}for(var i=0;i<n.length;i++){var s=n[i];null!=s[0]&&r[s[0]]||(t&&!s[2]?s[2]=t:t&&(s[2]="(".concat(s[2],") and (").concat(t,")")),e.push(s))}},e}},function(n,e,t){var r,o,a={},i=(r=function(){return window&&document&&document.all&&!window.atob},function(){return void 0===o&&(o=r.apply(this,arguments)),o}),s=function(n){var e={};return function(n,t){if("function"==typeof n)return n();if(void 0===e[n]){var r=function(n,e){return e?e.querySelector(n):document.querySelector(n)}.call(this,n,t);if(window.HTMLIFrameElement&&r instanceof window.HTMLIFrameElement)try{r=r.contentDocument.head}catch(n){r=null}e[n]=r}return e[n]}}(),l=null,p=0,c=[],u=t(4);function f(n,e){for(var t=0;t<n.length;t++){var r=n[t],o=a[r.id];if(o){o.refs++;for(var i=0;i<o.parts.length;i++)o.parts[i](r.parts[i]);for(;i<r.parts.length;i++)o.parts.push(v(r.parts[i],e))}else{var s=[];for(i=0;i<r.parts.length;i++)s.push(v(r.parts[i],e));a[r.id]={id:r.id,refs:1,parts:s}}}}function d(n,e){for(var t=[],r={},o=0;o<n.length;o++){var a=n[o],i=e.base?a[0]+e.base:a[0],s={css:a[1],media:a[2],sourceMap:a[3]};r[i]?r[i].parts.push(s):t.push(r[i]={id:i,parts:[s]})}return t}function m(n,e){var t=s(n.insertInto);if(!t)throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");var r=c[c.length-1];if("top"===n.insertAt)r?r.nextSibling?t.insertBefore(e,r.nextSibling):t.appendChild(e):t.insertBefore(e,t.firstChild),c.push(e);else if("bottom"===n.insertAt)t.appendChild(e);else{if("object"!=typeof n.insertAt||!n.insertAt.before)throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");var o=s(n.insertAt.before,t);t.insertBefore(e,o)}}function y(n){if(null===n.parentNode)return!1;n.parentNode.removeChild(n);var e=c.indexOf(n);e>=0&&c.splice(e,1)}function g(n){var e=document.createElement("style");if(void 0===n.attrs.type&&(n.attrs.type="text/css"),void 0===n.attrs.nonce){var r=function(){0;return t.nc}();r&&(n.attrs.nonce=r)}return h(e,n.attrs),m(n,e),e}function h(n,e){Object.keys(e).forEach(function(t){n.setAttribute(t,e[t])})}function v(n,e){var t,r,o,a;if(e.transform&&n.css){if(!(a="function"==typeof e.transform?e.transform(n.css):e.transform.default(n.css)))return function(){};n.css=a}if(e.singleton){var i=p++;t=l||(l=g(e)),r=x.bind(null,t,i,!1),o=x.bind(null,t,i,!0)}else n.sourceMap&&"function"==typeof URL&&"function"==typeof URL.createObjectURL&&"function"==typeof URL.revokeObjectURL&&"function"==typeof Blob&&"function"==typeof btoa?(t=function(n){var e=document.createElement("link");return void 0===n.attrs.type&&(n.attrs.type="text/css"),n.attrs.rel="stylesheet",h(e,n.attrs),m(n,e),e}(e),r=function(n,e,t){var r=t.css,o=t.sourceMap,a=void 0===e.convertToAbsoluteUrls&&o;(e.convertToAbsoluteUrls||a)&&(r=u(r));o&&(r+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(o))))+" */");var i=new Blob([r],{type:"text/css"}),s=n.href;n.href=URL.createObjectURL(i),s&&URL.revokeObjectURL(s)}.bind(null,t,e),o=function(){y(t),t.href&&URL.revokeObjectURL(t.href)}):(t=g(e),r=function(n,e){var t=e.css,r=e.media;r&&n.setAttribute("media",r);if(n.styleSheet)n.styleSheet.cssText=t;else{for(;n.firstChild;)n.removeChild(n.firstChild);n.appendChild(document.createTextNode(t))}}.bind(null,t),o=function(){y(t)});return r(n),function(e){if(e){if(e.css===n.css&&e.media===n.media&&e.sourceMap===n.sourceMap)return;r(n=e)}else o()}}n.exports=function(n,e){if("undefined"!=typeof DEBUG&&DEBUG&&"object"!=typeof document)throw new Error("The style-loader cannot be used in a non-browser environment");(e=e||{}).attrs="object"==typeof e.attrs?e.attrs:{},e.singleton||"boolean"==typeof e.singleton||(e.singleton=i()),e.insertInto||(e.insertInto="head"),e.insertAt||(e.insertAt="bottom");var t=d(n,e);return f(t,e),function(n){for(var r=[],o=0;o<t.length;o++){var i=t[o];(s=a[i.id]).refs--,r.push(s)}n&&f(d(n,e),e);for(o=0;o<r.length;o++){var s;if(0===(s=r[o]).refs){for(var l=0;l<s.parts.length;l++)s.parts[l]();delete a[s.id]}}}};var b,I=(b=[],function(n,e){return b[n]=e,b.filter(Boolean).join("\n")});function x(n,e,t,r){var o=t?"":r.css;if(n.styleSheet)n.styleSheet.cssText=I(e,o);else{var a=document.createTextNode(o),i=n.childNodes;i[e]&&n.removeChild(i[e]),i.length?n.insertBefore(a,i[e]):n.appendChild(a)}}},function(n,e){n.exports=function(n){var e="undefined"!=typeof window&&window.location;if(!e)throw new Error("fixUrls requires window.location");if(!n||"string"!=typeof n)return n;var t=e.protocol+"//"+e.host,r=t+e.pathname.replace(/\/[^\/]*$/,"/");return n.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi,function(n,e){var o,a=e.trim().replace(/^"(.*)"$/,function(n,e){return e}).replace(/^'(.*)'$/,function(n,e){return e});return/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(a)?n:(o=0===a.indexOf("//")?a:0===a.indexOf("/")?t+a:r+a.replace(/^\.\//,""),"url("+JSON.stringify(o)+")")})}},function(n,e,t){"use strict";t.r(e);t(0);var r={maxUserInput:8};var o=()=>{jQuery("#userInputContainer").empty();let n="";aly_gameInfo.promptInfo.userInput.forEach(e=>{n+=`<div class="color color${e}"></div>`}),jQuery("#userInputContainer").append(n)};var a=n=>{aly_gameInfo.promptInfo.userInput.push(n),o()};var i=()=>{console.log("removing..."),aly_gameInfo.promptInfo.userInput.pop(),o()};var s=n=>{n&&(aly_gameInfo.score+=1),jQuery("#scoreContainer .score-number").text(aly_gameInfo.score)};var l=[{tiles:[1,3],response:2},{tiles:[1,5],response:6},{tiles:[3,5],response:4},{tiles:[2,4],response:3},{tiles:[4,6],response:5},{tiles:[2,6],response:1},{tiles:[1,2],response:3},{tiles:[2,3],response:1},{tiles:[3,4],response:5},{tiles:[4,5],response:3},{tiles:[5,6],response:1},{tiles:[1,6],response:5},{tiles:[1,4],response:null},{tiles:[2,5],response:null},{tiles:[3,6],response:null}];const p=(n,e)=>{if(n===e)return n;let t=null;for(let r=0;r<l.length;r++)(l[r].tiles[0]===n&&l[r].tiles[1]===e||l[r].tiles[0]===e&&l[r].tiles[1]===n)&&(t=l[r].response);return t};var c=()=>{const n=aly_gameInfo.level+1,e=[];for(let t=0;t<n;t++)e.push(Math.floor(6*Math.random())+1);aly_gameInfo.promptInfo.prompt=e,(n=>{let e="";n.forEach(n=>{e+=`<div class="color color${n}"></div>`}),jQuery("#promptContainer").append(e)})(e),(()=>{let n=0,e=[];for(;n<aly_gameInfo.promptInfo.prompt.length-1;)e.push(p(aly_gameInfo.promptInfo.prompt[n],aly_gameInfo.promptInfo.prompt[n+1])),n++;console.log("ANSWER ARRAY:"),console.log(e),aly_gameInfo.promptInfo.promptAnswer=e})()};var u=()=>{aly_gameInfo.promptInfo.prompt=null,aly_gameInfo.promptInfo.promptAnswer=null,aly_gameInfo.promptInfo.userInput=[],jQuery("#promptContainer").empty(),jQuery("#userInputContainer").empty(),c()};var f=()=>{aly_gameInfo.promptInfo.promptAnswer=aly_gameInfo.promptInfo.promptAnswer.filter(n=>null!==n),console.log("user input"),console.log(aly_gameInfo.promptInfo.userInput),console.log("prompt answer"),console.log(aly_gameInfo.promptInfo.promptAnswer);let n=!0;if(aly_gameInfo.promptInfo.userInput.length===aly_gameInfo.promptInfo.promptAnswer.length)for(let e=0;e<aly_gameInfo.promptInfo.userInput.length;e++)aly_gameInfo.promptInfo.userInput[0]!==aly_gameInfo.promptInfo.promptAnswer[0]&&(n=!1);else n=!1;console.log("all correct-"+n),n?(s(!0),jQuery("#userInputContainer").addClass("correct")):(s(!1),jQuery("#userInputContainer").addClass("incorrect")),setTimeout(()=>{jQuery("#userInputContainer").removeClass(),u()},300)};window.aly_gameInfo={},aly_gameInfo.level=2,aly_gameInfo.score=0,aly_gameInfo.promptInfo={prompt:null,promptAnswer:null,userInput:[]},jQuery(document).ready(()=>{jQuery(document).on("click",".playGame",n=>{const e=jQuery(n.target).attr("id");aly_gameInfo.level="playMedium"===e?3:"playHard"===e?5:1,jQuery("#openScreen").addClass("hidden"),c()}),jQuery("html").keyup(n=>{const e=n.key;let t=null;if(console.log(n.key),"Backspace"===n.key)i();else if("Enter"===n.key)f();else{switch(e){case"r":t=1;break;case"o":t=2;break;case"y":t=3;break;case"g":t=4;break;case"b":t=5;break;case"v":t=6}t&&aly_gameInfo.promptInfo.userInput.length<r.maxUserInput&&a(t)}})})}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/main.scss":
+/*!******************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/main.scss ***!
+  \******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
+// Imports
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Allerta+Stencil&display=swap);", ""]);
+// Module
+exports.push([module.i, "/*****\nDEFAULT COLORS\n*******/\n/********\nPASTEL COLORS\n********/\nbody {\n  background-color: #40403E; }\n\n#gameContainer {\n  margin: 30px auto;\n  width: 70%;\n  max-width: 500px; }\n\n/****\nCOLORS\n******/\n.color1 {\n  background-color: #EB380F; }\n\n.color2 {\n  background-color: #E98C1C; }\n\n.color3 {\n  background-color: #F1D40E; }\n\n.color4 {\n  background-color: #00D467; }\n\n.color5 {\n  background-color: #0096D4; }\n\n.color6 {\n  background-color: #6B00D2; }\n\n.pastelMode .color1 {\n  background-color: #FFABAB; }\n\n.pastelMode .color2 {\n  background-color: #FFCBC1; }\n\n.pastelMode .color3 {\n  background-color: #FFF5BA; }\n\n.pastelMode .color4 {\n  background-color: #BFFCC6; }\n\n.pastelMode .color5 {\n  background-color: #85E3FF; }\n\n.pastelMode .color6 {\n  background-color: #B28DFF; }\n\n/*****\nTITLE\n*****/\n#title h1 {\n  font-family: 'Allerta Stencil', sans-serif;\n  text-align: center;\n  font-size: 60px;\n  color: silver;\n  margin-top: 20px;\n  margin-bottom: 0;\n  cursor: pointer; }\n\n/****\nPROMPT\n****/\n#promptContainer {\n  height: 60px;\n  border: 1px solid silver;\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  margin-bottom: 20px; }\n  #promptContainer .color {\n    height: 40px;\n    width: 40px;\n    margin: 5px; }\n\n/****\nUSER INPUT\n*****/\n#userInputContainer {\n  border: 1px solid silver;\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n  height: 80px; }\n  #userInputContainer .color {\n    width: 55px;\n    height: 55px;\n    margin: 5px; }\n\n#userInputContainer.correct {\n  border: 1px solid green; }\n\n#userInputContainer.incorrect {\n  border: 1px solid red; }\n\n/*****\nINFO CONTAINER\n******/\n#infoContainer {\n  height: 60px; }\n\n/****\nSCORE\n****/\n#scoreContainer span {\n  color: silver;\n  font-family: 'Allerta Stencil', sans-serif; }\n\n/****\nCOLOR PALETTE\n****/\n#colorPaletteContainer {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center; }\n\n#colorPaletteContainer .color {\n  height: 20px;\n  width: 20px;\n  border-radius: 50%;\n  margin: 2px;\n  color: white;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-family: Arial; }\n\n/*****\nINFO CONTAINER\n******/\n#infoContainer {\n  display: flex;\n  align-items: center;\n  justify-content: space-between; }\n\n/*** \nOPEN SCREEN \n***/\n#openScreen {\n  width: 100%;\n  height: 100%;\n  background-color: #40403E;\n  position: absolute;\n  /****\n  SPINNING SQUARES\n  ****/\n  /******\n  PLAY OPTIONS\n  ******/\n  /*****\n  MORE OPTIONS\n  ********/ }\n  #openScreen #spinningSquares {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    margin-top: 40px;\n    margin-bottom: 40px; }\n    #openScreen #spinningSquares .color {\n      width: 80px;\n      height: 80px;\n      margin: 10px;\n      border-radius: 3px;\n      cursor: pointer; }\n    #openScreen #spinningSquares .color:hover {\n      transition: all .4s ease;\n      -webkit-transition: all .9s ease;\n      transform: rotate(90deg); }\n  #openScreen #playOptions {\n    display: flex;\n    justify-content: center; }\n    #openScreen #playOptions .playGame {\n      height: 50px;\n      width: 100px;\n      color: silver;\n      border: 1px solid silver;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      font-family: 'Allerta Stencil', sans-serif;\n      margin: 10px;\n      cursor: pointer; }\n    #openScreen #playOptions .playGame:hover {\n      background-color: silver;\n      color: #40403E; }\n  #openScreen #moreOptions {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    margin-top: 20px; }\n    #openScreen #moreOptions .options {\n      font-family: 'Allerta Stencil', sans-serif;\n      color: silver;\n      margin: 20px;\n      font-size: 14px;\n      cursor: pointer; }\n    #openScreen #moreOptions .options:hover {\n      text-decoration: underline; }\n\n/****\nOPEN SCREEN CLOSED\n*****/\n#openScreen.hidden {\n  display: none; }\n", ""]);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+// eslint-disable-next-line func-names
+module.exports = function (useSourceMap) {
+  var list = []; // return the list of modules as css string
+
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = cssWithMappingToString(item, useSourceMap);
+
+      if (item[2]) {
+        return "@media ".concat(item[2], "{").concat(content, "}");
+      }
+
+      return content;
+    }).join('');
+  }; // import a list of modules into the list
+  // eslint-disable-next-line func-names
+
+
+  list.i = function (modules, mediaQuery) {
+    if (typeof modules === 'string') {
+      // eslint-disable-next-line no-param-reassign
+      modules = [[null, modules, '']];
+    }
+
+    var alreadyImportedModules = {};
+
+    for (var i = 0; i < this.length; i++) {
+      // eslint-disable-next-line prefer-destructuring
+      var id = this[i][0];
+
+      if (id != null) {
+        alreadyImportedModules[id] = true;
+      }
+    }
+
+    for (var _i = 0; _i < modules.length; _i++) {
+      var item = modules[_i]; // skip already imported module
+      // this implementation is not 100% perfect for weird media query combinations
+      // when a module is imported multiple times with different media queries.
+      // I hope this will never occur (Hey this way we have smaller bundles)
+
+      if (item[0] == null || !alreadyImportedModules[item[0]]) {
+        if (mediaQuery && !item[2]) {
+          item[2] = mediaQuery;
+        } else if (mediaQuery) {
+          item[2] = "(".concat(item[2], ") and (").concat(mediaQuery, ")");
+        }
+
+        list.push(item);
+      }
+    }
+  };
+
+  return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring
+
+  var cssMapping = item[3];
+
+  if (!cssMapping) {
+    return content;
+  }
+
+  if (useSourceMap && typeof btoa === 'function') {
+    var sourceMapping = toComment(cssMapping);
+    var sourceURLs = cssMapping.sources.map(function (source) {
+      return "/*# sourceURL=".concat(cssMapping.sourceRoot).concat(source, " */");
+    });
+    return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+  }
+
+  return [content].join('\n');
+} // Adapted from convert-source-map (MIT)
+
+
+function toComment(sourceMap) {
+  // eslint-disable-next-line no-undef
+  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+  var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
+  return "/*# ".concat(data, " */");
+}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/lib/addStyles.js":
+/*!****************************************************!*\
+  !*** ./node_modules/style-loader/lib/addStyles.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+
+var stylesInDom = {};
+
+var	memoize = function (fn) {
+	var memo;
+
+	return function () {
+		if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+		return memo;
+	};
+};
+
+var isOldIE = memoize(function () {
+	// Test for IE <= 9 as proposed by Browserhacks
+	// @see http://browserhacks.com/#hack-e71d8692f65334173fee715c222cb805
+	// Tests for existence of standard globals is to allow style-loader
+	// to operate correctly into non-standard environments
+	// @see https://github.com/webpack-contrib/style-loader/issues/177
+	return window && document && document.all && !window.atob;
+});
+
+var getTarget = function (target, parent) {
+  if (parent){
+    return parent.querySelector(target);
+  }
+  return document.querySelector(target);
+};
+
+var getElement = (function (fn) {
+	var memo = {};
+
+	return function(target, parent) {
+                // If passing function in options, then use it for resolve "head" element.
+                // Useful for Shadow Root style i.e
+                // {
+                //   insertInto: function () { return document.querySelector("#foo").shadowRoot }
+                // }
+                if (typeof target === 'function') {
+                        return target();
+                }
+                if (typeof memo[target] === "undefined") {
+			var styleTarget = getTarget.call(this, target, parent);
+			// Special case to return head of iframe instead of iframe itself
+			if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {
+				try {
+					// This will throw an exception if access to iframe is blocked
+					// due to cross-origin restrictions
+					styleTarget = styleTarget.contentDocument.head;
+				} catch(e) {
+					styleTarget = null;
+				}
+			}
+			memo[target] = styleTarget;
+		}
+		return memo[target]
+	};
+})();
+
+var singleton = null;
+var	singletonCounter = 0;
+var	stylesInsertedAtTop = [];
+
+var	fixUrls = __webpack_require__(/*! ./urls */ "./node_modules/style-loader/lib/urls.js");
+
+module.exports = function(list, options) {
+	if (typeof DEBUG !== "undefined" && DEBUG) {
+		if (typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	}
+
+	options = options || {};
+
+	options.attrs = typeof options.attrs === "object" ? options.attrs : {};
+
+	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+	// tags it will allow on a page
+	if (!options.singleton && typeof options.singleton !== "boolean") options.singleton = isOldIE();
+
+	// By default, add <style> tags to the <head> element
+        if (!options.insertInto) options.insertInto = "head";
+
+	// By default, add <style> tags to the bottom of the target
+	if (!options.insertAt) options.insertAt = "bottom";
+
+	var styles = listToStyles(list, options);
+
+	addStylesToDom(styles, options);
+
+	return function update (newList) {
+		var mayRemove = [];
+
+		for (var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+
+			domStyle.refs--;
+			mayRemove.push(domStyle);
+		}
+
+		if(newList) {
+			var newStyles = listToStyles(newList, options);
+			addStylesToDom(newStyles, options);
+		}
+
+		for (var i = 0; i < mayRemove.length; i++) {
+			var domStyle = mayRemove[i];
+
+			if(domStyle.refs === 0) {
+				for (var j = 0; j < domStyle.parts.length; j++) domStyle.parts[j]();
+
+				delete stylesInDom[domStyle.id];
+			}
+		}
+	};
+};
+
+function addStylesToDom (styles, options) {
+	for (var i = 0; i < styles.length; i++) {
+		var item = styles[i];
+		var domStyle = stylesInDom[item.id];
+
+		if(domStyle) {
+			domStyle.refs++;
+
+			for(var j = 0; j < domStyle.parts.length; j++) {
+				domStyle.parts[j](item.parts[j]);
+			}
+
+			for(; j < item.parts.length; j++) {
+				domStyle.parts.push(addStyle(item.parts[j], options));
+			}
+		} else {
+			var parts = [];
+
+			for(var j = 0; j < item.parts.length; j++) {
+				parts.push(addStyle(item.parts[j], options));
+			}
+
+			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+		}
+	}
+}
+
+function listToStyles (list, options) {
+	var styles = [];
+	var newStyles = {};
+
+	for (var i = 0; i < list.length; i++) {
+		var item = list[i];
+		var id = options.base ? item[0] + options.base : item[0];
+		var css = item[1];
+		var media = item[2];
+		var sourceMap = item[3];
+		var part = {css: css, media: media, sourceMap: sourceMap};
+
+		if(!newStyles[id]) styles.push(newStyles[id] = {id: id, parts: [part]});
+		else newStyles[id].parts.push(part);
+	}
+
+	return styles;
+}
+
+function insertStyleElement (options, style) {
+	var target = getElement(options.insertInto)
+
+	if (!target) {
+		throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");
+	}
+
+	var lastStyleElementInsertedAtTop = stylesInsertedAtTop[stylesInsertedAtTop.length - 1];
+
+	if (options.insertAt === "top") {
+		if (!lastStyleElementInsertedAtTop) {
+			target.insertBefore(style, target.firstChild);
+		} else if (lastStyleElementInsertedAtTop.nextSibling) {
+			target.insertBefore(style, lastStyleElementInsertedAtTop.nextSibling);
+		} else {
+			target.appendChild(style);
+		}
+		stylesInsertedAtTop.push(style);
+	} else if (options.insertAt === "bottom") {
+		target.appendChild(style);
+	} else if (typeof options.insertAt === "object" && options.insertAt.before) {
+		var nextSibling = getElement(options.insertAt.before, target);
+		target.insertBefore(style, nextSibling);
+	} else {
+		throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");
+	}
+}
+
+function removeStyleElement (style) {
+	if (style.parentNode === null) return false;
+	style.parentNode.removeChild(style);
+
+	var idx = stylesInsertedAtTop.indexOf(style);
+	if(idx >= 0) {
+		stylesInsertedAtTop.splice(idx, 1);
+	}
+}
+
+function createStyleElement (options) {
+	var style = document.createElement("style");
+
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
+
+	if(options.attrs.nonce === undefined) {
+		var nonce = getNonce();
+		if (nonce) {
+			options.attrs.nonce = nonce;
+		}
+	}
+
+	addAttrs(style, options.attrs);
+	insertStyleElement(options, style);
+
+	return style;
+}
+
+function createLinkElement (options) {
+	var link = document.createElement("link");
+
+	if(options.attrs.type === undefined) {
+		options.attrs.type = "text/css";
+	}
+	options.attrs.rel = "stylesheet";
+
+	addAttrs(link, options.attrs);
+	insertStyleElement(options, link);
+
+	return link;
+}
+
+function addAttrs (el, attrs) {
+	Object.keys(attrs).forEach(function (key) {
+		el.setAttribute(key, attrs[key]);
+	});
+}
+
+function getNonce() {
+	if (false) {}
+
+	return __webpack_require__.nc;
+}
+
+function addStyle (obj, options) {
+	var style, update, remove, result;
+
+	// If a transform function was defined, run it on the css
+	if (options.transform && obj.css) {
+	    result = typeof options.transform === 'function'
+		 ? options.transform(obj.css) 
+		 : options.transform.default(obj.css);
+
+	    if (result) {
+	    	// If transform returns a value, use that instead of the original css.
+	    	// This allows running runtime transformations on the css.
+	    	obj.css = result;
+	    } else {
+	    	// If the transform function returns a falsy value, don't add this css.
+	    	// This allows conditional loading of css
+	    	return function() {
+	    		// noop
+	    	};
+	    }
+	}
+
+	if (options.singleton) {
+		var styleIndex = singletonCounter++;
+
+		style = singleton || (singleton = createStyleElement(options));
+
+		update = applyToSingletonTag.bind(null, style, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, style, styleIndex, true);
+
+	} else if (
+		obj.sourceMap &&
+		typeof URL === "function" &&
+		typeof URL.createObjectURL === "function" &&
+		typeof URL.revokeObjectURL === "function" &&
+		typeof Blob === "function" &&
+		typeof btoa === "function"
+	) {
+		style = createLinkElement(options);
+		update = updateLink.bind(null, style, options);
+		remove = function () {
+			removeStyleElement(style);
+
+			if(style.href) URL.revokeObjectURL(style.href);
+		};
+	} else {
+		style = createStyleElement(options);
+		update = applyToTag.bind(null, style);
+		remove = function () {
+			removeStyleElement(style);
+		};
+	}
+
+	update(obj);
+
+	return function updateStyle (newObj) {
+		if (newObj) {
+			if (
+				newObj.css === obj.css &&
+				newObj.media === obj.media &&
+				newObj.sourceMap === obj.sourceMap
+			) {
+				return;
+			}
+
+			update(obj = newObj);
+		} else {
+			remove();
+		}
+	};
+}
+
+var replaceText = (function () {
+	var textStore = [];
+
+	return function (index, replacement) {
+		textStore[index] = replacement;
+
+		return textStore.filter(Boolean).join('\n');
+	};
+})();
+
+function applyToSingletonTag (style, index, remove, obj) {
+	var css = remove ? "" : obj.css;
+
+	if (style.styleSheet) {
+		style.styleSheet.cssText = replaceText(index, css);
+	} else {
+		var cssNode = document.createTextNode(css);
+		var childNodes = style.childNodes;
+
+		if (childNodes[index]) style.removeChild(childNodes[index]);
+
+		if (childNodes.length) {
+			style.insertBefore(cssNode, childNodes[index]);
+		} else {
+			style.appendChild(cssNode);
+		}
+	}
+}
+
+function applyToTag (style, obj) {
+	var css = obj.css;
+	var media = obj.media;
+
+	if(media) {
+		style.setAttribute("media", media)
+	}
+
+	if(style.styleSheet) {
+		style.styleSheet.cssText = css;
+	} else {
+		while(style.firstChild) {
+			style.removeChild(style.firstChild);
+		}
+
+		style.appendChild(document.createTextNode(css));
+	}
+}
+
+function updateLink (link, options, obj) {
+	var css = obj.css;
+	var sourceMap = obj.sourceMap;
+
+	/*
+		If convertToAbsoluteUrls isn't defined, but sourcemaps are enabled
+		and there is no publicPath defined then lets turn convertToAbsoluteUrls
+		on by default.  Otherwise default to the convertToAbsoluteUrls option
+		directly
+	*/
+	var autoFixUrls = options.convertToAbsoluteUrls === undefined && sourceMap;
+
+	if (options.convertToAbsoluteUrls || autoFixUrls) {
+		css = fixUrls(css);
+	}
+
+	if (sourceMap) {
+		// http://stackoverflow.com/a/26603875
+		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+	}
+
+	var blob = new Blob([css], { type: "text/css" });
+
+	var oldSrc = link.href;
+
+	link.href = URL.createObjectURL(blob);
+
+	if(oldSrc) URL.revokeObjectURL(oldSrc);
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/lib/urls.js":
+/*!***********************************************!*\
+  !*** ./node_modules/style-loader/lib/urls.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+/**
+ * When source maps are enabled, `style-loader` uses a link element with a data-uri to
+ * embed the css on the page. This breaks all relative urls because now they are relative to a
+ * bundle instead of the current page.
+ *
+ * One solution is to only use full urls, but that may be impossible.
+ *
+ * Instead, this function "fixes" the relative urls to be absolute according to the current page location.
+ *
+ * A rudimentary test suite is located at `test/fixUrls.js` and can be run via the `npm test` command.
+ *
+ */
+
+module.exports = function (css) {
+  // get current location
+  var location = typeof window !== "undefined" && window.location;
+
+  if (!location) {
+    throw new Error("fixUrls requires window.location");
+  }
+
+	// blank or null?
+	if (!css || typeof css !== "string") {
+	  return css;
+  }
+
+  var baseUrl = location.protocol + "//" + location.host;
+  var currentDir = baseUrl + location.pathname.replace(/\/[^\/]*$/, "/");
+
+	// convert each url(...)
+	/*
+	This regular expression is just a way to recursively match brackets within
+	a string.
+
+	 /url\s*\(  = Match on the word "url" with any whitespace after it and then a parens
+	   (  = Start a capturing group
+	     (?:  = Start a non-capturing group
+	         [^)(]  = Match anything that isn't a parentheses
+	         |  = OR
+	         \(  = Match a start parentheses
+	             (?:  = Start another non-capturing groups
+	                 [^)(]+  = Match anything that isn't a parentheses
+	                 |  = OR
+	                 \(  = Match a start parentheses
+	                     [^)(]*  = Match anything that isn't a parentheses
+	                 \)  = Match a end parentheses
+	             )  = End Group
+              *\) = Match anything and then a close parens
+          )  = Close non-capturing group
+          *  = Match anything
+       )  = Close capturing group
+	 \)  = Match a close parens
+
+	 /gi  = Get all matches, not the first.  Be case insensitive.
+	 */
+	var fixedCss = css.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi, function(fullMatch, origUrl) {
+		// strip quotes (if they exist)
+		var unquotedOrigUrl = origUrl
+			.trim()
+			.replace(/^"(.*)"$/, function(o, $1){ return $1; })
+			.replace(/^'(.*)'$/, function(o, $1){ return $1; });
+
+		// already a full url? no change
+		if (/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(unquotedOrigUrl)) {
+		  return fullMatch;
+		}
+
+		// convert the url to a full url
+		var newUrl;
+
+		if (unquotedOrigUrl.indexOf("//") === 0) {
+		  	//TODO: should we add protocol?
+			newUrl = unquotedOrigUrl;
+		} else if (unquotedOrigUrl.indexOf("/") === 0) {
+			// path should be relative to the base url
+			newUrl = baseUrl + unquotedOrigUrl; // already starts with '/'
+		} else {
+			// path should be relative to current directory
+			newUrl = currentDir + unquotedOrigUrl.replace(/^\.\//, ""); // Strip leading './'
+		}
+
+		// send back the fixed url(...)
+		return "url(" + JSON.stringify(newUrl) + ")";
+	});
+
+	// send back the fixed css
+	return fixedCss;
+};
+
+
+/***/ }),
+
+/***/ "./src/gameFuncs/add-user-input.js":
+/*!*****************************************!*\
+  !*** ./src/gameFuncs/add-user-input.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _reset_user_input_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reset-user-input.js */ "./src/gameFuncs/reset-user-input.js");
+/* global aly_gameInfo */
+
+
+
+const addUserInput = index => {
+  aly_gameInfo.promptInfo.userInput.push(index);
+  Object(_reset_user_input_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (addUserInput);
+
+
+/***/ }),
+
+/***/ "./src/gameFuncs/check-user-answer.js":
+/*!********************************************!*\
+  !*** ./src/gameFuncs/check-user-answer.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _update_score_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./update-score.js */ "./src/gameFuncs/update-score.js");
+/* harmony import */ var _new_prompt_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./new-prompt.js */ "./src/gameFuncs/new-prompt.js");
+/* global jQuery aly_gameInfo */
+
+
+
+
+const checkUserAnswer = () => {
+  // remove unnecessary nulls from array
+  aly_gameInfo.promptInfo.promptAnswer = aly_gameInfo.promptInfo.promptAnswer.filter((e) => {
+    return e !== null;
+  });
+
+  // breaks when user input is blank but answer key is 'null'
+  console.log('user input');
+  console.log(aly_gameInfo.promptInfo.userInput);
+  console.log('prompt answer');
+  console.log(aly_gameInfo.promptInfo.promptAnswer);
+  let allCorrect = true;
+  if (aly_gameInfo.promptInfo.userInput.length === aly_gameInfo.promptInfo.promptAnswer.length) {
+    for (let i = 0; i < aly_gameInfo.promptInfo.userInput.length; i++) {
+      if (aly_gameInfo.promptInfo.userInput[0] !== aly_gameInfo.promptInfo.promptAnswer[0]) {
+        allCorrect = false;
+      }
+    }
+  } else {
+    allCorrect = false;
+  }
+  console.log('all correct-' + allCorrect);
+  if (allCorrect) {
+    Object(_update_score_js__WEBPACK_IMPORTED_MODULE_0__["default"])(true);
+    jQuery('#userInputContainer').addClass('correct');
+  } else {
+    Object(_update_score_js__WEBPACK_IMPORTED_MODULE_0__["default"])(false);
+    jQuery('#userInputContainer').addClass('incorrect');
+  }
+  setTimeout(() => {
+    jQuery('#userInputContainer').removeClass();
+    Object(_new_prompt_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  }, 300);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (checkUserAnswer);
+
+
+/***/ }),
+
+/***/ "./src/gameFuncs/create-prompt-sequence.js":
+/*!*************************************************!*\
+  !*** ./src/gameFuncs/create-prompt-sequence.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils_answer_key_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/answer-key.js */ "./src/utils/answer-key.js");
+/* global jQuery aly_gameInfo */
+
+
+
+const twoTileAnswer = (tile1, tile2) => {
+  // tiles are same, user input should be that same color as well
+  if (tile1 === tile2) return tile1;
+  let response = null;
+  for (let i = 0; i < _utils_answer_key_js__WEBPACK_IMPORTED_MODULE_0__["default"].length; i++) {
+    if ((_utils_answer_key_js__WEBPACK_IMPORTED_MODULE_0__["default"][i].tiles[0] === tile1 && _utils_answer_key_js__WEBPACK_IMPORTED_MODULE_0__["default"][i].tiles[1] === tile2) ||
+      (_utils_answer_key_js__WEBPACK_IMPORTED_MODULE_0__["default"][i].tiles[0] === tile2 && _utils_answer_key_js__WEBPACK_IMPORTED_MODULE_0__["default"][i].tiles[1] === tile1)) {
+      response = _utils_answer_key_js__WEBPACK_IMPORTED_MODULE_0__["default"][i].response;
+    }
+  }
+  return response;
+};
+
+const getAnswerArray = () => {
+  let i = 0;
+  let answer = [];
+  while (i < aly_gameInfo.promptInfo.prompt.length - 1) {
+    answer.push(twoTileAnswer(aly_gameInfo.promptInfo.prompt[i], aly_gameInfo.promptInfo.prompt[i + 1]));
+    i++;
+  }
+  console.log('ANSWER ARRAY:');
+  console.log(answer);
+  aly_gameInfo.promptInfo.promptAnswer = answer;
+};
+
+const addPromptSequenceToPage = (sequence) => {
+  let sequenceHTML = '';
+  sequence.forEach((e) => {
+    sequenceHTML += `<div class="color color${e}"></div>`;
+  });
+  jQuery('#promptContainer').append(sequenceHTML);
+};
+
+const createPromptSequence = () => {
+  const numOfTiles = aly_gameInfo.level + 1;
+  const tilesArr = [];
+  for (let i = 0; i < numOfTiles; i++) {
+    tilesArr.push(Math.floor(Math.random() * 6) + 1);
+  }
+  aly_gameInfo.promptInfo.prompt = tilesArr;
+  addPromptSequenceToPage(tilesArr);
+  getAnswerArray();
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (createPromptSequence);
+
+
+/***/ }),
+
+/***/ "./src/gameFuncs/new-prompt.js":
+/*!*************************************!*\
+  !*** ./src/gameFuncs/new-prompt.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _create_prompt_sequence__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./create-prompt-sequence */ "./src/gameFuncs/create-prompt-sequence.js");
+/* global jQuery aly_gameInfo */
+
+
+
+const resetPromptInfo = () => {
+  aly_gameInfo.promptInfo.prompt = null;
+  aly_gameInfo.promptInfo.promptAnswer = null;
+  aly_gameInfo.promptInfo.userInput = [];
+};
+
+const newPrompt = () => {
+  resetPromptInfo();
+  jQuery('#promptContainer').empty();
+  jQuery('#userInputContainer').empty();
+  Object(_create_prompt_sequence__WEBPACK_IMPORTED_MODULE_0__["default"])();
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (newPrompt);
+
+
+/***/ }),
+
+/***/ "./src/gameFuncs/remove-user-input.js":
+/*!********************************************!*\
+  !*** ./src/gameFuncs/remove-user-input.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _reset_user_input__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reset-user-input */ "./src/gameFuncs/reset-user-input.js");
+/* global aly_gameInfo */
+
+
+
+const removeUserInput = () => {
+  console.log('removing...');
+  aly_gameInfo.promptInfo.userInput.pop();
+  Object(_reset_user_input__WEBPACK_IMPORTED_MODULE_0__["default"])();
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (removeUserInput);
+
+
+/***/ }),
+
+/***/ "./src/gameFuncs/reset-user-input.js":
+/*!*******************************************!*\
+  !*** ./src/gameFuncs/reset-user-input.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* global jQuery aly_gameInfo */
+
+const resetUserInputContainer = () => {
+  jQuery('#userInputContainer').empty();
+  let inputHTML = '';
+  aly_gameInfo.promptInfo.userInput.forEach((e) => {
+    inputHTML += `<div class="color color${e}"></div>`;
+  });
+  jQuery('#userInputContainer').append(inputHTML);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (resetUserInputContainer);
+
+
+/***/ }),
+
+/***/ "./src/gameFuncs/update-score.js":
+/*!***************************************!*\
+  !*** ./src/gameFuncs/update-score.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* global jQuery aly_gameInfo */
+
+const updateScore = (isCorrect) => {
+  if (isCorrect) {
+    aly_gameInfo.score += 1;
+  }
+  jQuery('#scoreContainer .score-number').text(aly_gameInfo.score);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (updateScore);
+
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main.scss */ "./src/main.scss");
+/* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_main_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_game_constraints_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/game-constraints.js */ "./src/utils/game-constraints.js");
+/* harmony import */ var _utils_run_game_presets__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/run-game-presets */ "./src/utils/run-game-presets.js");
+/* harmony import */ var _gameFuncs_add_user_input_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./gameFuncs/add-user-input.js */ "./src/gameFuncs/add-user-input.js");
+/* harmony import */ var _gameFuncs_remove_user_input_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./gameFuncs/remove-user-input.js */ "./src/gameFuncs/remove-user-input.js");
+/* harmony import */ var _gameFuncs_check_user_answer_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./gameFuncs/check-user-answer.js */ "./src/gameFuncs/check-user-answer.js");
+/* harmony import */ var _gameFuncs_new_prompt__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./gameFuncs/new-prompt */ "./src/gameFuncs/new-prompt.js");
+/* global jQuery aly_gameInfo */
+
+
+
+
+
+
+
+
+
+
+
+window.aly_gameInfo = {};
+
+// set default properties on aly_gameInfo object
+Object(_utils_run_game_presets__WEBPACK_IMPORTED_MODULE_2__["default"])();
+
+jQuery(document).ready(() => {
+  /*****
+   * CLICK EVENTS
+   *****/
+  jQuery(document).on('click', '.playGame', (e) => {
+    const level = jQuery(e.target).attr('id');
+    level === 'playMedium' ? aly_gameInfo.level = 3 : level === 'playHard' ? aly_gameInfo.level = 5 : aly_gameInfo.level = 1;
+
+    jQuery('#openScreen').addClass('hidden');
+
+    // **** START GAME **** //
+    Object(_gameFuncs_new_prompt__WEBPACK_IMPORTED_MODULE_6__["default"])();
+    // ******************** //
+  });
+
+  // USER CLICKS 'SQUARES' - OPEN BACK UP MENU
+  jQuery(document).on('click', '#title h1', () => {
+    // show menu
+    jQuery('#openScreen').removeClass('hidden');
+    // reset defaults on aly_gameInfo object
+    Object(_utils_run_game_presets__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  });
+
+  /****
+   * KEY PRESSES
+  *****/
+  jQuery('html').keyup(event => {
+    const key = event.key;
+    let index = null;
+    console.log(event.key);
+    if (event.key === 'Backspace') {
+      Object(_gameFuncs_remove_user_input_js__WEBPACK_IMPORTED_MODULE_4__["default"])();
+    } else if (event.key === 'Enter') {
+      Object(_gameFuncs_check_user_answer_js__WEBPACK_IMPORTED_MODULE_5__["default"])();
+    } else {
+      switch (key) {
+        // r
+        case 'r':
+          index = 1;
+          break;
+        // o
+        case 'o':
+          index = 2;
+          break;
+        // y
+        case 'y':
+          index = 3;
+          break;
+        // g
+        case 'g':
+          index = 4;
+          break;
+        // b
+        case 'b':
+          index = 5;
+          break;
+        // v
+        case 'v':
+          index = 6;
+          break;
+        default:
+          //
+      }
+      if (index && aly_gameInfo.promptInfo.userInput.length < _utils_game_constraints_js__WEBPACK_IMPORTED_MODULE_1__["default"].maxUserInput) {
+        Object(_gameFuncs_add_user_input_js__WEBPACK_IMPORTED_MODULE_3__["default"])(index);
+      }
+    }
+  }); // ** END KEY PRESS EVENT ** //
+});
+
+
+/***/ }),
+
+/***/ "./src/main.scss":
+/*!***********************!*\
+  !*** ./src/main.scss ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/lib/loader.js!./main.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/main.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./src/utils/answer-key.js":
+/*!*********************************!*\
+  !*** ./src/utils/answer-key.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const answerKey = [
+// PRIMARY - red, blue, & yellow only
+  {
+    tiles: [1, 3],
+    response: 2
+  },
+  {
+    tiles: [1, 5],
+    response: 6
+  },
+  {
+    tiles: [3, 5],
+    response: 4
+  },
+
+  // SECONDARY - purple, orange, & green only
+  {
+    tiles: [2, 4],
+    response: 3
+  },
+  {
+    tiles: [4, 6],
+    response: 5
+  },
+  {
+    tiles: [2, 6],
+    response: 1
+  },
+
+  // COMBINATION - one primary color and one secondary color
+  {
+    tiles: [1, 2],
+    response: 3
+  },
+  {
+    tiles: [2, 3],
+    response: 1
+  },
+  {
+    tiles: [3, 4],
+    response: 5
+  },
+  {
+    tiles: [4, 5],
+    response: 3
+  },
+  {
+    tiles: [5, 6],
+    response: 1
+  },
+  {
+    tiles: [1, 6],
+    response: 5
+  },
+
+  // two colors opposite each other on the color wheel (ex. red and green)
+  {
+    tiles: [1, 4],
+    response: null
+  },
+  {
+    tiles: [2, 5],
+    response: null
+  },
+  {
+    tiles: [3, 6],
+    response: null
+  }
+];
+
+/* harmony default export */ __webpack_exports__["default"] = (answerKey);
+
+
+/***/ }),
+
+/***/ "./src/utils/game-constraints.js":
+/*!***************************************!*\
+  !*** ./src/utils/game-constraints.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const gameConstraints = {
+  // max number of shapes user can submit for one answer - limited to avoid answer spilling out of container
+  maxUserInput: 8
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (gameConstraints);
+
+
+/***/ }),
+
+/***/ "./src/utils/run-game-presets.js":
+/*!***************************************!*\
+  !*** ./src/utils/run-game-presets.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* global aly_gameInfo */
+
+const runGamePresets = () => {
+  aly_gameInfo.level = 2;
+  aly_gameInfo.score = 0;
+  aly_gameInfo.promptInfo = {
+    prompt: null,
+    promptAnswer: null,
+    userInput: []
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (runGamePresets);
+
+
+/***/ })
+
+/******/ });

@@ -3,24 +3,22 @@
 import './main.scss';
 
 import gameConstraints from './utils/game-constraints.js';
+import runGamePresets from './utils/run-game-presets';
 
 import addUserInput from './gameFuncs/add-user-input.js';
 import removeUserInput from './gameFuncs/remove-user-input.js';
 import checkUserAnswer from './gameFuncs/check-user-answer.js';
-import createPromptSequence from './gameFuncs/create-prompt-sequence.js';
+import newPrompt from './gameFuncs/new-prompt';
 
 window.aly_gameInfo = {};
 
-aly_gameInfo.level = 2;
-aly_gameInfo.score = 0;
-aly_gameInfo.promptInfo = {
-  prompt: null,
-  promptAnswer: null,
-  userInput: []
-};
+// set default properties on aly_gameInfo object
+runGamePresets();
 
 jQuery(document).ready(() => {
-
+  /*****
+   * CLICK EVENTS
+   *****/
   jQuery(document).on('click', '.playGame', (e) => {
     const level = jQuery(e.target).attr('id');
     level === 'playMedium' ? aly_gameInfo.level = 3 : level === 'playHard' ? aly_gameInfo.level = 5 : aly_gameInfo.level = 1;
@@ -28,8 +26,16 @@ jQuery(document).ready(() => {
     jQuery('#openScreen').addClass('hidden');
 
     // **** START GAME **** //
-    createPromptSequence();
+    newPrompt();
     // ******************** //
+  });
+
+  // USER CLICKS 'SQUARES' - OPEN BACK UP MENU
+  jQuery(document).on('click', '#title h1', () => {
+    // show menu
+    jQuery('#openScreen').removeClass('hidden');
+    // reset defaults on aly_gameInfo object
+    runGamePresets();
   });
 
   /****
