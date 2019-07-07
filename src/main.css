@@ -63,7 +63,6 @@ PROMPT
 #promptContainer .color {
   height: 40px;
   width: 40px;
-  cursor: pointer;
   margin: 5px;
 }
 
@@ -90,7 +89,6 @@ USER INPUT
   width: 55px;
   height: 55px;
   margin: 5px;
-  cursor: pointer;
 }
 
 /*****
@@ -121,7 +119,6 @@ COLOR PALETTE
   height: 20px;
   width: 20px;
   border-radius: 50%;
-  cursor: pointer;
   margin: 2px;
   color: white;
   display: flex;

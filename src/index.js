@@ -1,5 +1,7 @@
 /* global jQuery aly_gameInfo */
 
+import './main.css';
+
 import gameConstraints from './utils/game-constraints.js';
 
 import addUserInput from './gameFuncs/add-user-input.js';
