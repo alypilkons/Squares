@@ -38,6 +38,12 @@ jQuery(document).ready(() => {
     runGamePresets();
   });
 
+  // USER CLICKS 'SETTINGS'
+  jQuery(document).on('click', '#settingsBtn', () => {
+    // show menu
+    jQuery('#settingsScreen').removeClass('hidden');
+  });
+
   /****
    * KEY PRESSES
   *****/
