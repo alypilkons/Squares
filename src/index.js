@@ -1,6 +1,6 @@
 /* global jQuery aly_gameInfo */
 
-import './main.css';
+import './main.scss';
 
 import gameConstraints from './utils/game-constraints.js';
 

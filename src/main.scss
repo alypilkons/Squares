@@ -1,0 +1,288 @@
+/*****
+DEFAULT COLORS
+*******/
+$defaultRed: #EB380F;
+$defaultOrange: #E98C1C;
+$defaultYellow: #F1D40E;
+$defaultGreen: #00D467;
+$defaultBlue:  #0096D4;
+$defaultViolet: #6B00D2;
+
+$defaultBackground: #40403E;
+$defaultText: silver;
+$defaultBorder: silver;
+
+
+/********
+PASTEL COLORS
+********/
+$pastelRed: #FFABAB;
+$pastelOrange: #FFCBC1;
+$pastelYellow: #FFF5BA;
+$pastelGreen: #BFFCC6;
+$pastelBlue:  #85E3FF;
+$pastelViolet: #B28DFF;
+
+$pastelBackground: #40403E;
+$pastelText: silver;
+$pastelBorder: silver;
+
+
+body {
+  background-color: $defaultBackground;
+}
+
+#gameContainer {
+  margin: 30px auto;
+  width: 70%;
+  max-width: 500px;
+}
+
+/****
+COLORS
+******/
+.color1 {
+  background-color: $defaultRed;
+}
+
+.color2 {
+  background-color: $defaultOrange;
+}
+
+.color3 {
+  background-color: $defaultYellow;
+}
+
+.color4 {
+  background-color: $defaultGreen;
+}
+
+.color5 {
+  background-color: $defaultBlue;
+}
+
+.color6 {
+  background-color: $defaultViolet;
+}
+
+.pastelMode {
+  .color1 {
+    background-color: $pastelRed;
+  }
+  
+  .color2 {
+    background-color: $pastelOrange;
+  }
+  
+  .color3 {
+    background-color: $pastelYellow;
+  }
+  
+  .color4 {
+    background-color: $pastelGreen;
+  }
+  
+  .color5 {
+    background-color: $pastelBlue;
+  }
+  
+  .color6 {
+    background-color: $pastelViolet;
+  }
+  
+}
+
+/*****
+TITLE
+*****/
+#title h1 {
+  font-family: 'Allerta Stencil', sans-serif;
+  text-align: center;
+  font-size: 60px;
+  color: $defaultText;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+/****
+PROMPT
+****/
+#promptContainer {
+  height: 60px;
+  border: 1px solid $defaultBorder;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .color {
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+  }
+}
+
+/****
+USER INPUT
+*****/
+#userInputContainer {
+  border: 1px solid $defaultBorder;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 80px;
+
+  .color {
+    width: 55px;
+    height: 55px;
+    margin: 5px;
+  }
+}
+
+#userInputContainer.correct {
+  border: 1px solid green;
+}
+
+#userInputContainer.incorrect {
+  border: 1px solid red;
+}
+
+/*****
+INFO CONTAINER
+******/
+#infoContainer {
+  height: 60px;
+}
+
+/****
+SCORE
+****/
+#scoreContainer span {
+  color: $defaultText;
+  font-family: 'Allerta Stencil', sans-serif;
+}
+
+/****
+COLOR PALETTE
+****/
+#colorPaletteContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#colorPaletteContainer .color {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin: 2px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial;
+}
+
+/*****
+INFO CONTAINER
+******/
+#infoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+
+/*** 
+OPEN SCREEN 
+***/
+#openScreen {
+  width: 100%;
+  height: 100%;
+  background-color: $defaultBackground;
+  position: absolute;
+
+  /****
+  SPINNING SQUARES
+  ****/
+  #spinningSquares {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    .color {
+      width: 80px;
+      height: 80px;
+      margin: 10px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .color:hover {
+      transition: all .4s ease;
+      -webkit-transition: all .9s ease;
+      transform: rotate(90deg);
+    }
+  }
+
+  /******
+  PLAY OPTIONS
+  ******/
+  #playOptions {
+    display: flex;
+    justify-content: center;
+
+    .playGame {
+      height: 50px;
+      width: 100px;
+      color: $defaultText;
+      border: 1px solid $defaultBorder;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Allerta Stencil', sans-serif;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    .playGame:hover {
+      background-color: $defaultText;
+      color: $defaultBackground;
+    }
+  }
+
+
+  /*****
+  MORE OPTIONS
+  ********/
+  #moreOptions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+    .options {
+      font-family: 'Allerta Stencil', sans-serif;
+      color: $defaultText;
+      margin: 20px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .options:hover {
+      text-decoration: underline;
+    }
+  }
+
+} // end open screen
+
+/****
+OPEN SCREEN CLOSED
+*****/
+#openScreen.hidden {
+  display: none;
+}
