@@ -296,10 +296,13 @@ OPEN SCREEN
   }
   
   .toggleColor {
-
+    margin: 25px;
+    padding: 10px;
+  
     span {
       font-family: 'Allerta Stencil', sans-serif;
       color: $defaultText;
+      cursor: pointer;
     }
 
     .color {
@@ -312,7 +315,12 @@ OPEN SCREEN
       justify-content: center;
       align-items: center;
       font-family: Arial;
+      margin: 10px auto;
     }
+  }
+
+  .toggleColor.selected {
+    border: 1px solid green;
   }
 }
 

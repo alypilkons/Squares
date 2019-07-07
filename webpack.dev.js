@@ -7,7 +7,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     // [contentHash] to avoid file getting cached on user's computer and potentially not loading most current version
-    filename: 'main.[contentHash].js',
+    filename: 'dist/main.js',
     path: path.resolve(__dirname, 'dist')
   },
   // builds updates HTML file with new JS file name when it changes

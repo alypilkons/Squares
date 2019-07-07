@@ -9,8 +9,10 @@ import addUserInput from './gameFuncs/add-user-input.js';
 import removeUserInput from './gameFuncs/remove-user-input.js';
 import checkUserAnswer from './gameFuncs/check-user-answer.js';
 import newPrompt from './gameFuncs/new-prompt';
+import VPtoggleCheck from './gameFuncs/vp-toggle-check';
 
 window.aly_gameInfo = {};
+aly_gameInfo.VPtoggle = 'violet';
 
 // set default properties on aly_gameInfo object
 runGamePresets();
@@ -25,6 +27,8 @@ jQuery(document).ready(() => {
 
     jQuery('#openScreen').addClass('hidden');
 
+    VPtoggleCheck();
+
     // **** START GAME **** //
     newPrompt();
     // ******************** //
@@ -32,9 +36,12 @@ jQuery(document).ready(() => {
 
   // USER CLICKS 'SQUARES' - OPEN BACK UP MENU
   jQuery(document).on('click', '#title h1', () => {
+    // close settings screen if open
+    jQuery('#settingsScreen').addClass('hidden');
     // show menu
     jQuery('#openScreen').removeClass('hidden');
     // reset defaults on aly_gameInfo object
+    VPtoggleCheck();
     runGamePresets();
   });
 
@@ -44,12 +51,29 @@ jQuery(document).ready(() => {
     jQuery('#settingsScreen').removeClass('hidden');
   });
 
+  // USER CLICKS TO TOGGLE VIOLET/PURPLE IN SETTINGS
+  jQuery(document).on('click', '.toggleColor span', (e) => {
+    const $clicked = jQuery(e.target.closest('.toggleColor'));
+    if ($clicked.hasClass('selected') === false) {
+      if ($clicked.hasClass('violet')) {
+        aly_gameInfo.VPtoggle = 'violet';
+        jQuery('.toggleColor.purple').removeClass('selected');
+        jQuery('.toggleColor.violet').addClass('selected');
+      } else if ($clicked.hasClass('purple')) {
+        aly_gameInfo.VPtoggle = 'purple';
+        jQuery('.toggleColor.violet').removeClass('selected');
+        jQuery('.toggleColor.purple').addClass('selected');
+      }
+    }
+  });
+
   /****
    * KEY PRESSES
   *****/
   jQuery('html').keyup(event => {
     const key = event.key;
     let index = null;
+    let letter6 = aly_gameInfo.VPtoggle === 'purple' ? 'p' : 'v';
     console.log(event.key);
     if (event.key === 'Backspace') {
       removeUserInput();
@@ -78,7 +102,7 @@ jQuery(document).ready(() => {
           index = 5;
           break;
         // v
-        case 'v':
+        case letter6:
           index = 6;
           break;
         default:
