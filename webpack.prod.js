@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -9,9 +10,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   // builds updates HTML file with new JS file name when it changes
-  plugins: [new HtmlWebpackPlugin({
-    template: './src/template.html'
-  })],
+  plugins: [
+    new HtmlWebpackPlugin({ template: './src/template.html' }),
+    new CleanWebpackPlugin()
+  ],
   module: {
     rules: [
       {
