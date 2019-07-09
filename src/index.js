@@ -34,6 +34,12 @@ jQuery(document).ready(() => {
     // ******************** //
   });
 
+  // USER CLICKS 'HOW TO PLAY'
+  jQuery(document).on('click', '#howToPlayBtn', (e) => {
+    aly_gameInfo.tutorial = true;
+    jQuery('#openScreen').addClass('hidden');
+  });
+
   // USER CLICKS 'SQUARES' - OPEN BACK UP MENU
   jQuery(document).on('click', '#title h1', () => {
     // close settings screen if open

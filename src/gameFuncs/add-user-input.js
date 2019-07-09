@@ -1,10 +1,8 @@
-/* global aly_gameInfo */
-
-import resetUserInputContainer from './reset-user-input.js';
+/* global jQuery aly_gameInfo */
 
 const addUserInput = index => {
   aly_gameInfo.promptInfo.userInput.push(index);
-  resetUserInputContainer();
+  jQuery('#userInputContainer').append(`<div class="color color${index}"></div>`);
 };
 
 export default addUserInput;

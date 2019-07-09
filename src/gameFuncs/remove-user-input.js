@@ -1,11 +1,8 @@
-/* global aly_gameInfo */
-
-import resetUserInputContainer from './reset-user-input';
+/* global jQuery aly_gameInfo */
 
 const removeUserInput = () => {
-  console.log('removing...');
   aly_gameInfo.promptInfo.userInput.pop();
-  resetUserInputContainer();
+  jQuery('#userInputContainer').children().last().remove();
 };
 
 export default removeUserInput;

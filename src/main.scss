@@ -298,6 +298,7 @@ OPEN SCREEN
   .toggleColor {
     margin: 25px;
     padding: 10px;
+    border: 1px solid $defaultBackground;
   
     span {
       font-family: 'Allerta Stencil', sans-serif;
@@ -330,4 +331,20 @@ OPEN SCREEN CLOSED
 #openScreen.hidden,
 #settingsScreen.hidden {
   display: none;
+}
+
+
+
+
+
+/*****
+TUTORIAL
+*******/
+#tutorial {
+  position: absolute;
+  height: 200px;
+  width: 400px;
+  border: 1px solid green;
+  top: 0;
+  background: $defaultBackground;
 }
