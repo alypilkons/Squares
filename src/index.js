@@ -10,6 +10,7 @@ import removeUserInput from './gameFuncs/remove-user-input.js';
 import checkUserAnswer from './gameFuncs/check-user-answer.js';
 import newPrompt from './gameFuncs/new-prompt';
 import VPtoggleCheck from './gameFuncs/vp-toggle-check';
+import runTutorial from '.gameFuncs/run-tutorial';
 
 window.aly_gameInfo = {};
 aly_gameInfo.VPtoggle = 'violet';
@@ -38,6 +39,7 @@ jQuery(document).ready(() => {
   jQuery(document).on('click', '#howToPlayBtn', (e) => {
     aly_gameInfo.tutorial = true;
     jQuery('#openScreen').addClass('hidden');
+    runTutorial();
   });
 
   // USER CLICKS 'SQUARES' - OPEN BACK UP MENU
