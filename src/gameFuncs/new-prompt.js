@@ -1,12 +1,7 @@
-/* global jQuery aly_gameInfo */
+/* global jQuery */
 
+import resetPromptInfo from './reset-prompt-info';
 import createPromptSequence from './create-prompt-sequence';
-
-const resetPromptInfo = () => {
-  aly_gameInfo.promptInfo.prompt = null;
-  aly_gameInfo.promptInfo.promptAnswer = null;
-  aly_gameInfo.promptInfo.userInput = [];
-};
 
 const newPrompt = () => {
   resetPromptInfo();

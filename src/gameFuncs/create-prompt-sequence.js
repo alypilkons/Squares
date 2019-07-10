@@ -35,14 +35,21 @@ const addPromptSequenceToPage = (sequence) => {
   jQuery('#promptContainer').append(sequenceHTML);
 };
 
-const createPromptSequence = () => {
-  const numOfTiles = aly_gameInfo.level + 1;
-  const tilesArr = [];
-  for (let i = 0; i < numOfTiles; i++) {
-    tilesArr.push(Math.floor(Math.random() * 6) + 1);
+// IF ARR IS INCLUDED, HAS TO BE AN ARRAY OF NUMBERS 1-6.
+// ADDED THIS OVERRIDE FOR TUTORIAL LEVEL
+const createPromptSequence = (arr = null) => {
+  if (arr !== null) {
+    aly_gameInfo.promptInfo.prompt = arr;
+    addPromptSequenceToPage(arr);
+  } else {
+    const numOfTiles = aly_gameInfo.level + 1;
+    const tilesArr = [];
+    for (let i = 0; i < numOfTiles; i++) {
+      tilesArr.push(Math.floor(Math.random() * 6) + 1);
+    }
+    aly_gameInfo.promptInfo.prompt = tilesArr;
+    addPromptSequenceToPage(tilesArr);
   }
-  aly_gameInfo.promptInfo.prompt = tilesArr;
-  addPromptSequenceToPage(tilesArr);
   getAnswerArray();
 };
 

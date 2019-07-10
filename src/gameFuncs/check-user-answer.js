@@ -9,7 +9,6 @@ const checkUserAnswer = () => {
     return e !== null;
   });
 
-  // breaks when user input is blank but answer key is 'null'
   console.log('user input');
   console.log(aly_gameInfo.promptInfo.userInput);
   console.log('prompt answer');
@@ -28,14 +27,19 @@ const checkUserAnswer = () => {
   if (allCorrect) {
     updateScore(true);
     jQuery('#userInputContainer').addClass('correct');
+    setTimeout(() => {
+      jQuery('#userInputContainer').removeClass();
+      if (aly_gameInfo.tutorial === false) {
+        newPrompt();
+      }
+    }, 300);
   } else {
-    updateScore(false);
+    /* updateScore(false); */
     jQuery('#userInputContainer').addClass('incorrect');
+    setTimeout(() => {
+      jQuery('#userInputContainer').removeClass();
+    }, 300);
   }
-  setTimeout(() => {
-    jQuery('#userInputContainer').removeClass();
-    newPrompt();
-  }, 300);
 };
 
 export default checkUserAnswer;

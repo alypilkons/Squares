@@ -342,9 +342,35 @@ TUTORIAL
 *******/
 #tutorial {
   position: absolute;
-  height: 200px;
-  width: 400px;
-  border: 1px solid green;
+  height: auto;
+  width: 280px;
+  border: 1px solid yellow;
   top: 0;
   background: $defaultBackground;
+
+  #tutorial-text {
+    color: $defaultText;
+    font-family: Arial;
+    padding: 10px;
+  }
+
+  #tutorial-button-container {
+    display: flex;
+  }
+
+  .tutorial-button {
+    color: $defaultText;
+    font-family: 'Allerta Stencil', sans-serif;
+    border: 1px solid $defaultBorder;
+    padding: 10px;
+    margin: auto;
+    text-align: center;
+    width: 100px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .tutorial-button.hidden {
+    display: none;
+  }
 }

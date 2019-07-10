@@ -10,7 +10,7 @@ import removeUserInput from './gameFuncs/remove-user-input.js';
 import checkUserAnswer from './gameFuncs/check-user-answer.js';
 import newPrompt from './gameFuncs/new-prompt';
 import VPtoggleCheck from './gameFuncs/vp-toggle-check';
-import runTutorial from '.gameFuncs/run-tutorial';
+import runTutorial from './gameFuncs/run-tutorial';
 
 window.aly_gameInfo = {};
 aly_gameInfo.VPtoggle = 'violet';
