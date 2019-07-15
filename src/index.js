@@ -11,6 +11,7 @@ import checkUserAnswer from './gameFuncs/check-user-answer.js';
 import newPrompt from './gameFuncs/new-prompt';
 import VPtoggleCheck from './gameFuncs/vp-toggle-check';
 import runTutorial from './gameFuncs/run-tutorial';
+import startTimer from './gameFuncs/start-timer';
 
 window.aly_gameInfo = {};
 aly_gameInfo.VPtoggle = 'violet';
@@ -30,8 +31,24 @@ jQuery(document).ready(() => {
 
     VPtoggleCheck();
 
+    // reset score
+    aly_gameInfo.score = 0;
+
     // **** START GAME **** //
     newPrompt();
+    startTimer();
+    // ******************** //
+  });
+
+  // USER CLICKS 'PLAY AGAIN' AFTER GETTING GAME OVER
+  jQuery(document).on('click', '.playAgainBtn', () => {
+    jQuery('#gameOverScreen').addClass('hidden');
+    // reset score
+    aly_gameInfo.score = 0;
+
+    // **** START GAME **** //
+    newPrompt();
+    startTimer();
     // ******************** //
   });
 
@@ -46,6 +63,17 @@ jQuery(document).ready(() => {
   jQuery(document).on('click', '#title h1', () => {
     // close settings screen if open
     jQuery('#settingsScreen').addClass('hidden');
+    // show menu
+    jQuery('#openScreen').removeClass('hidden');
+    // reset defaults on aly_gameInfo object
+    VPtoggleCheck();
+    runGamePresets();
+  });
+
+  // USER CLICKS BACK-T0-MENU FROM GAME OVER SCREEN - OPEN BACK UP MENU
+  jQuery(document).on('click', '.goToMenuBtn', () => {
+    // close settings screen if open
+    jQuery('#gameOverScreen').addClass('hidden');
     // show menu
     jQuery('#openScreen').removeClass('hidden');
     // reset defaults on aly_gameInfo object

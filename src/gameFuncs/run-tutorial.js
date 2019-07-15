@@ -5,6 +5,9 @@ import createPromptSequence from './create-prompt-sequence';
 import tutorialText from '../utils/tutorial-text';
 
 const runTutorial = () => {
+  jQuery('#promptContainer').empty();
+  jQuery('#userInputContainer').empty();
+  resetPromptInfo();
   let counter = 0;
   jQuery('body').prepend(`
   <div id="tutorial">
