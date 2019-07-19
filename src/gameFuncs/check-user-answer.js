@@ -9,13 +9,14 @@ const checkUserAnswer = () => {
     return e !== null;
   });
 
-  console.log('user input');
-  console.log(aly_gameInfo.promptInfo.userInput);
-  console.log('prompt answer');
-  console.log(aly_gameInfo.promptInfo.promptAnswer);
   let allCorrect = true;
+  // check that user input is same length as answer - if it isn't, user's answer is incorrect
   if (aly_gameInfo.promptInfo.userInput.length === aly_gameInfo.promptInfo.promptAnswer.length) {
+
+    // loop through each element in user's answer
     for (let i = 0; i < aly_gameInfo.promptInfo.userInput.length; i++) {
+
+      // check that element in user input matches element of that index in correct answer - if not, user's answer is incorrect
       if (aly_gameInfo.promptInfo.userInput[0] !== aly_gameInfo.promptInfo.promptAnswer[0]) {
         allCorrect = false;
       }
@@ -23,7 +24,10 @@ const checkUserAnswer = () => {
   } else {
     allCorrect = false;
   }
-  console.log('all correct-' + allCorrect);
+
+  /***
+  USER'S ANSWER IS CORRECT
+  ***/
   if (allCorrect) {
     updateScore(true);
     jQuery('#userInputContainer').addClass('correct');
@@ -33,6 +37,9 @@ const checkUserAnswer = () => {
         newPrompt();
       }
     }, 300);
+  /***
+  USER'S ANSWER IS NOT CORRECT
+  ****/
   } else {
     /* updateScore(false); */
     jQuery('#userInputContainer').addClass('incorrect');

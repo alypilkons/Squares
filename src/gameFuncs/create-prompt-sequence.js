@@ -22,8 +22,6 @@ const getAnswerArray = () => {
     answer.push(twoTileAnswer(aly_gameInfo.promptInfo.prompt[i], aly_gameInfo.promptInfo.prompt[i + 1]));
     i++;
   }
-  console.log('ANSWER ARRAY:');
-  console.log(answer);
   aly_gameInfo.promptInfo.promptAnswer = answer;
 };
 

@@ -240,6 +240,15 @@ OPEN SCREEN
     }
   }
 
+  @media (max-width: 650px) {
+    #spinningSquares {
+      .color {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
   /******
   PLAY OPTIONS
   ******/
@@ -333,16 +342,6 @@ OPEN SCREEN
   }
 }
 
-/****
-OPEN SCREEN CLOSED
-*****/
-#openScreen.hidden,
-#settingsScreen.hidden,
-#gameOverScreen.hidden {
-  display: none;
-}
-
-
 
 /*************
 GAME OVER SCREEN
@@ -408,7 +407,7 @@ GAME OVER SCREEN
 /*****
 TUTORIAL
 *******/
-#tutorial {
+#tutorialScreen {
   position: absolute;
   height: auto;
   width: 280px;
@@ -438,12 +437,13 @@ TUTORIAL
     cursor: pointer;
   }
 
-  .tutorial-button.hidden {
-    display: none;
-  }
-
   .tutorial-heading {
     text-decoration: underline;
     text-align: center;
   }
+}
+
+
+.hidden {
+  display: none !important;
 }

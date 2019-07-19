@@ -7,6 +7,16 @@
   </head>
   <body>
 
+    <!------------ TUTORIAL -------->
+    <div id="tutorialScreen" class="hidden">
+      <div id="tutorial-text"></div>
+      <div id="tutorial-button-container">
+        <div id="tutorial-button-back" class="tutorial-button hidden">Back</div>
+        <div id="tutorial-button-continue" class="tutorial-button">Continue</div>
+      </div>
+    </div>
+    <!------------------------------->
+    
     <div id="title">
       <h1>SQUARES</h1>
     </div>
@@ -38,11 +48,11 @@
     <!--------------- SETTINGS SCREEN -------------------->
     <div id="settingsScreen" class="hidden">
       <div id="toggleVPContainer">
-        <div id="toggleVioletContainer" class="toggleColor violet selected">
+        <div id="toggleVioletContainer" class="toggleColor violet">
           <span>Team Violet</span>
           <div class="color color6">V</div>
         </div>
-        <div id="togglePurpleContainer" class="toggleColor purple">
+        <div id="togglePurpleContainer" class="toggleColor purple selected">
           <span>Team Purple</span>
           <div class="color color6">P</div>
         </div>

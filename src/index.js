@@ -9,85 +9,67 @@ import addUserInput from './gameFuncs/add-user-input.js';
 import removeUserInput from './gameFuncs/remove-user-input.js';
 import checkUserAnswer from './gameFuncs/check-user-answer.js';
 import newPrompt from './gameFuncs/new-prompt';
-import VPtoggleCheck from './gameFuncs/vp-toggle-check';
+import VPtoggleCheck from './gameFuncs/settings/vp-toggle-check';
 import runTutorial from './gameFuncs/run-tutorial';
-import startTimer from './gameFuncs/start-timer';
+import returnToMenu from './gameFuncs/return-to-menu';
 
 window.aly_gameInfo = {};
-aly_gameInfo.VPtoggle = 'violet';
+aly_gameInfo.VPtoggle = 'purple';
 
 // set default properties on aly_gameInfo object
 runGamePresets();
 
 jQuery(document).ready(() => {
-  /*****
-   * CLICK EVENTS
-   *****/
+  /************************************************************************************
+  /******************************* CLICK EVENTS ****************************************
+  *************************************************************************************/
+
+  // ************* EASY, MEDIUM, OR HARD BUTTONS FROM MENU - START GAME ************** //
   jQuery(document).on('click', '.playGame', (e) => {
+    // adjust level
     const level = jQuery(e.target).attr('id');
     level === 'playMedium' ? aly_gameInfo.level = 3 : level === 'playHard' ? aly_gameInfo.level = 5 : aly_gameInfo.level = 1;
 
+    // hide menu
     jQuery('#openScreen').addClass('hidden');
 
+    // check settings
     VPtoggleCheck();
 
     // reset score
     aly_gameInfo.score = 0;
 
-    // **** START GAME **** //
+    // START GAME
     newPrompt();
-    startTimer();
-    // ******************** //
   });
 
-  // USER CLICKS 'PLAY AGAIN' AFTER GETTING GAME OVER
+  // ************ USER CLICKS 'PLAY AGAIN' AFTER GETTING GAME OVER ************** //
   jQuery(document).on('click', '.playAgainBtn', () => {
+    // hide game over screen
     jQuery('#gameOverScreen').addClass('hidden');
+
     // reset score
     aly_gameInfo.score = 0;
 
-    // **** START GAME **** //
+    // START GAME
     newPrompt();
-    startTimer();
-    // ******************** //
   });
 
-  // USER CLICKS 'HOW TO PLAY'
-  jQuery(document).on('click', '#howToPlayBtn', (e) => {
-    aly_gameInfo.tutorial = true;
-    jQuery('#openScreen').addClass('hidden');
-    runTutorial();
-  });
+  // ************* USER CLICKS 'HOW TO PLAY' FROM MENU ************************** //
+  jQuery(document).on('click', '#howToPlayBtn', (e) => runTutorial());
 
-  // USER CLICKS 'SQUARES' - OPEN BACK UP MENU
-  jQuery(document).on('click', '#title h1', () => {
-    // close settings screen if open
-    jQuery('#settingsScreen').addClass('hidden');
-    // show menu
-    jQuery('#openScreen').removeClass('hidden');
-    // reset defaults on aly_gameInfo object
-    VPtoggleCheck();
-    runGamePresets();
-  });
+  // ************* USER CLICKS 'SQUARES' LOGO - OPEN BACK UP MENU *************** //
+  jQuery(document).on('click', '#title h1', () => returnToMenu());
 
-  // USER CLICKS BACK-T0-MENU FROM GAME OVER SCREEN - OPEN BACK UP MENU
-  jQuery(document).on('click', '.goToMenuBtn', () => {
-    // close settings screen if open
-    jQuery('#gameOverScreen').addClass('hidden');
-    // show menu
-    jQuery('#openScreen').removeClass('hidden');
-    // reset defaults on aly_gameInfo object
-    VPtoggleCheck();
-    runGamePresets();
-  });
+  // ********* USER CLICKS BACK-T0-MENU FROM GAME OVER SCREEN - OPEN MENU ******** //
+  jQuery(document).on('click', '.goToMenuBtn', () => returnToMenu());
 
-  // USER CLICKS 'SETTINGS'
+  // ***********  USER CLICKS 'SETTINGS' **************************************** //
   jQuery(document).on('click', '#settingsBtn', () => {
-    // show menu
     jQuery('#settingsScreen').removeClass('hidden');
   });
 
-  // USER CLICKS TO TOGGLE VIOLET/PURPLE IN SETTINGS
+  // ************ USER CLICKS TO TOGGLE VIOLET/PURPLE IN SETTINGS ****************** //
   jQuery(document).on('click', '.toggleColor span', (e) => {
     const $clicked = jQuery(e.target.closest('.toggleColor'));
     if ($clicked.hasClass('selected') === false) {
@@ -103,14 +85,11 @@ jQuery(document).ready(() => {
     }
   });
 
-  /****
-   * KEY PRESSES
-  *****/
+  // ****************************** USER PRESSES A KEY ************************ //
   jQuery('html').keyup(event => {
     const key = event.key;
     let index = null;
     let letter6 = aly_gameInfo.VPtoggle === 'purple' ? 'p' : 'v';
-    console.log(event.key);
     if (event.key === 'Backspace') {
       removeUserInput();
     } else if (event.key === 'Enter') {
@@ -148,5 +127,5 @@ jQuery(document).ready(() => {
         addUserInput(index);
       }
     }
-  }); // ** END KEY PRESS EVENT ** //
-});
+  }); // end keypress event
+}); // end document.ready event
