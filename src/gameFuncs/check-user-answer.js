@@ -31,12 +31,13 @@ const checkUserAnswer = () => {
   if (allCorrect) {
     updateScore(true);
     jQuery('#userInputContainer').addClass('correct');
+    jQuery('#promptContainer .color').fadeOut('slow');
     setTimeout(() => {
       jQuery('#userInputContainer').removeClass();
       if (aly_gameInfo.tutorial === false) {
         newPrompt();
       }
-    }, 300);
+    }, 500);
   /***
   USER'S ANSWER IS NOT CORRECT
   ****/
@@ -45,7 +46,7 @@ const checkUserAnswer = () => {
     jQuery('#userInputContainer').addClass('incorrect');
     setTimeout(() => {
       jQuery('#userInputContainer').removeClass();
-    }, 300);
+    }, 500);
   }
 };
 
