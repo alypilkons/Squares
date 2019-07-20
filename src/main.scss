@@ -363,13 +363,74 @@ GAME OVER SCREEN
 }
 
 #gameScoresContainer {
-  display: flex;
-  justify-content: center;
+  margin: auto;
+  text-align: center;
 
-  span {
+  span, div {
     color: $defaultText;
     font-family: 'Allerta Stencil', sans-serif;
     font-size: 24px;
+  }
+}
+
+#gameScoresAllTime {
+  border: 1px solid silver;
+  max-width: 300px;
+  margin: auto;
+  margin-top: 50px;
+
+  #gameScoresAllTimeTitle {
+    font-size: 20px;
+  }
+
+  .highScoreSlot {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 50px;
+    margin-bottom: 5px;
+
+    span {
+      font-size: 16px;
+    }
+  }
+
+  .highScoreSlot.highScoreHeading {
+    justify-content: space-around;
+    margin-right: 0;
+
+    span {
+      text-decoration: underline;
+    }
+
+    .highScoreValue {
+      margin-right: 0;
+    }
+  }
+
+  #highScoresAllTimeTable {
+    .highScoreSlot:nth-child(1) span {
+      color: $defaultRed;
+    }
+
+    .highScoreSlot:nth-child(2) span {
+      color: $defaultOrange;
+    }
+
+    .highScoreSlot:nth-child(3) span {
+      color: $defaultYellow;
+    }
+
+    .highScoreSlot:nth-child(4) span {
+      color: $defaultGreen;
+    }
+
+    .highScoreSlot:nth-child(5) span {
+      color: $defaultBlue;
+    }
+
+    .highScoreSlot:nth-child(6) span {
+      color: $defaultViolet;
+    }
   }
 }
 

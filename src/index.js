@@ -12,6 +12,7 @@ import newPrompt from './gameFuncs/new-prompt';
 import VPtoggleCheck from './gameFuncs/settings/vp-toggle-check';
 import runTutorial from './gameFuncs/run-tutorial';
 import returnToMenu from './gameFuncs/return-to-menu';
+import startTimer from './gameFuncs/start-timer';
 
 window.aly_gameInfo = {};
 aly_gameInfo.VPtoggle = 'purple';
@@ -38,8 +39,10 @@ jQuery(document).ready(() => {
 
     // reset score
     aly_gameInfo.score = 0;
+    jQuery('#scoreContainer .score-number').text('0');
 
     // START GAME
+    startTimer();
     newPrompt();
   });
 
@@ -50,8 +53,10 @@ jQuery(document).ready(() => {
 
     // reset score
     aly_gameInfo.score = 0;
+    jQuery('#scoreContainer .score-number').text('0');
 
     // START GAME
+    startTimer();
     newPrompt();
   });
 
