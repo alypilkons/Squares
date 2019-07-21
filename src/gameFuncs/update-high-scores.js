@@ -14,7 +14,10 @@ const updateHighScores = (score) => {
     scoresArray = scoresString.split('&');
     let scoreAdded = false;
     for (let i = 0; i < scoresArray.length; i++) {
-      if (score > Number(scoresArray[0].split('||')[1])) {
+      let currentContender = Number(scoresArray[i].split('||')[1]);
+      console.log('score = ' + score);
+      console.log('currentContender = ' + currentContender);
+      if (score >= currentContender) {
         scoresArray.splice(i, 0, currentScore);
         scoreAdded = true;
         break;

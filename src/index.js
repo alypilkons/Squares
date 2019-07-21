@@ -28,8 +28,7 @@ jQuery(document).ready(() => {
   // ************* EASY, MEDIUM, OR HARD BUTTONS FROM MENU - START GAME ************** //
   jQuery(document).on('click', '.playGame', (e) => {
     // adjust level
-    const level = jQuery(e.target).attr('id');
-    level === 'playMedium' ? aly_gameInfo.level = 3 : level === 'playHard' ? aly_gameInfo.level = 5 : aly_gameInfo.level = 1;
+    aly_gameInfo.level = 1;
 
     // hide menu
     jQuery('#openScreen').addClass('hidden');
@@ -48,6 +47,9 @@ jQuery(document).ready(() => {
 
   // ************ USER CLICKS 'PLAY AGAIN' AFTER GETTING GAME OVER ************** //
   jQuery(document).on('click', '.playAgainBtn', () => {
+    // adjust level
+    aly_gameInfo.level = 1;
+
     // hide game over screen
     jQuery('#gameOverScreen').addClass('hidden');
 

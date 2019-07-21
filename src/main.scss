@@ -257,8 +257,8 @@ OPEN SCREEN
     justify-content: center;
 
     .playGame {
-      height: 50px;
-      width: 100px;
+      height: 70px;
+      width: 160px;
       color: $defaultText;
       border: 1px solid $defaultBorder;
       display: flex;
@@ -267,6 +267,7 @@ OPEN SCREEN
       font-family: 'Allerta Stencil', sans-serif;
       margin: 10px;
       cursor: pointer;
+      font-size: 21px;
     }
 
     .playGame:hover {
@@ -295,6 +296,20 @@ OPEN SCREEN
 
     .options:hover {
       text-decoration: underline;
+    }
+  }
+
+  /*****
+  BY LINE
+  ********/ 
+  #byLine {
+    font-size: 11px;
+    text-align: center;
+    color: $defaultText;
+    font-family: sans-serif; 
+
+    a {
+      color: $defaultText;
     }
   }
 
@@ -402,8 +417,12 @@ GAME OVER SCREEN
       text-decoration: underline;
     }
 
+    .highScoreDate {
+      margin-left: 18px;
+    }
+
     .highScoreValue {
-      margin-right: 0;
+      margin-right: 36px;
     }
   }
 

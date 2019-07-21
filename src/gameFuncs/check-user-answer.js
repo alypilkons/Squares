@@ -2,6 +2,7 @@
 
 import updateScore from './update-score.js';
 import newPrompt from './new-prompt.js';
+import updateLevel from './update-level';
 
 const checkUserAnswer = () => {
   // remove unnecessary nulls from array
@@ -30,14 +31,15 @@ const checkUserAnswer = () => {
   ***/
   if (allCorrect) {
     updateScore(true);
+    updateLevel();
     jQuery('#userInputContainer').addClass('correct');
-    jQuery('#promptContainer .color').fadeOut('slow');
+    jQuery('#promptContainer .color').fadeOut('fast');
     setTimeout(() => {
       jQuery('#userInputContainer').removeClass();
       if (aly_gameInfo.tutorial === false) {
         newPrompt();
       }
-    }, 500);
+    }, 400);
   /***
   USER'S ANSWER IS NOT CORRECT
   ****/

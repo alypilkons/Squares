@@ -9,13 +9,9 @@ const startTimer = () => {
   aly_gameInfo.timeLeftCheck = setInterval(() => {
     let currentTimeLeft = Number($timer.text());
     if (currentTimeLeft > 0) {
-      console.log('time left: ' + currentTimeLeft);
-      console.log(aly_gameInfo.timeLeftCheck);
       let newTimeLeft = currentTimeLeft - 1;
       $timer.text(newTimeLeft);
     } else {
-      console.log('interval else statement');
-      console.log(aly_gameInfo.timeLeftCheck);
       clearInterval(aly_gameInfo.timeLeftCheck);
       gameOver();
     }
