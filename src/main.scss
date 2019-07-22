@@ -192,6 +192,7 @@ COLOR PALETTE
   justify-content: center;
   align-items: center;
   font-family: Arial;
+  cursor: pointer;
 }
 
 /*****
@@ -331,11 +332,11 @@ OPEN SCREEN
     margin: 25px;
     padding: 10px;
     border: 1px solid $defaultBackground;
+    cursor: pointer;
   
     span {
       font-family: 'Allerta Stencil', sans-serif;
       color: $defaultText;
-      cursor: pointer;
     }
 
     .color {

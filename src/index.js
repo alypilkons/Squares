@@ -77,8 +77,8 @@ jQuery(document).ready(() => {
   });
 
   // ************ USER CLICKS TO TOGGLE VIOLET/PURPLE IN SETTINGS ****************** //
-  jQuery(document).on('click', '.toggleColor span', (e) => {
-    const $clicked = jQuery(e.target.closest('.toggleColor'));
+  jQuery('.toggleColor').on('click', e => {
+    const $clicked = jQuery(e.target).closest('.toggleColor');
     if ($clicked.hasClass('selected') === false) {
       if ($clicked.hasClass('violet')) {
         aly_gameInfo.VPtoggle = 'violet';
@@ -89,6 +89,13 @@ jQuery(document).ready(() => {
         jQuery('.toggleColor.violet').removeClass('selected');
         jQuery('.toggleColor.purple').addClass('selected');
       }
+    }
+  });
+
+  jQuery('#colorPaletteContainer .color').on('click', e => {
+    let index = jQuery(e.target).closest('.color').attr('id').replace('c', '');
+    if (index && aly_gameInfo.promptInfo.userInput.length < gameConstraints.maxUserInput) {
+      addUserInput(index);
     }
   });
 
