@@ -40,6 +40,12 @@ body {
   max-width: 500px;
 }
 
+@media (max-width: 650px) {
+  #gameContainer {
+    width: 90%;
+  }
+}
+
 /****
 COLORS
 ******/
@@ -142,6 +148,17 @@ USER INPUT
   }
 }
 
+@media (max-width: 650px) {
+  #userInputContainer {
+    height: 55px;
+  }
+
+  #userInputContainer .color {
+    width: 30px;
+    height: 30px;
+  }
+}
+
 #userInputContainer.correct {
   border: 1px solid green;
 }
@@ -155,6 +172,9 @@ INFO CONTAINER
 ******/
 #infoContainer {
   height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /****
@@ -195,15 +215,50 @@ COLOR PALETTE
   cursor: pointer;
 }
 
-/*****
-INFO CONTAINER
-******/
-#infoContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/****
+MOBILE BUTTONS
+****/
+#mobileInteractionButtons {
+  display: none
 }
 
+/*****
+INFO CONTAINER + CHILDREN (ON MOBILE)
+******/
+@media (max-width: 650px) {
+  #infoContainer {
+    flex-direction: column;
+    height: auto;
+  }
+
+  #scoreContainer, #timerContainer, #colorPaletteContainer {
+    padding: 15px;
+  }
+
+  #colorPaletteContainer .color {
+    height: 40px;
+    width: 40px;
+    margin: 8px;
+
+    span {
+      display: none;
+    }
+  }
+
+  #mobileInteractionButtons {
+    display: flex;
+
+    div {
+      color: $defaultText;
+      font-family: 'Allerta Stencil', sans-serif;
+      margin-top: 20px; 
+      margin-left: 20px;
+      margin-right: 20px;
+      border: 1px solid $defaultText;
+      padding: 10px;
+    }
+  }
+}
 
 
 

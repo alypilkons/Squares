@@ -93,11 +93,21 @@ jQuery(document).ready(() => {
   });
 
   jQuery('#colorPaletteContainer .color').on('click', e => {
-    let index = jQuery(e.target).closest('.color').attr('id').replace('c', '');
+    let index = Number(jQuery(e.target).closest('.color').attr('id').replace('c', ''));
     if (index && aly_gameInfo.promptInfo.userInput.length < gameConstraints.maxUserInput) {
       addUserInput(index);
     }
   });
+
+  /* ********* MOBILE ONLY BUTTONS *************/
+  jQuery('.mobileDelete').on('click', e => {
+    removeUserInput();
+  });
+
+  jQuery('.mobileSubmit').on('click', e => {
+    checkUserAnswer();
+  });
+  /*******************************************/
 
   // ****************************** USER PRESSES A KEY ************************ //
   jQuery('html').keyup(event => {

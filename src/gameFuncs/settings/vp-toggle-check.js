@@ -2,9 +2,9 @@
 
 const VPtoggleCheck = () => {
   if (aly_gameInfo.VPtoggle === 'purple') {
-    jQuery('#colorPaletteContainer .color6').text('p');
+    jQuery('#colorPaletteContainer .color6 span').text('p');
   } else {
-    jQuery('#colorPaletteContainer .color6').text('v');
+    jQuery('#colorPaletteContainer .color6 span').text('v');
   }
 };
 
